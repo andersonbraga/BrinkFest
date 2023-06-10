@@ -1,6 +1,6 @@
 ﻿namespace BrinkFest
 {
-    partial class Form1
+    partial class TelaPrincipalForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -38,8 +38,11 @@
             toolStripButton1 = new ToolStripButton();
             toolStripButton2 = new ToolStripButton();
             toolStripButton3 = new ToolStripButton();
+            labelRodape = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
             menuStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
+            labelRodape.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -61,25 +64,25 @@
             // clienteToolStripMenuItem
             // 
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(180, 22);
+            clienteToolStripMenuItem.Size = new Size(122, 22);
             clienteToolStripMenuItem.Text = "Cliente";
             // 
             // temaToolStripMenuItem
             // 
             temaToolStripMenuItem.Name = "temaToolStripMenuItem";
-            temaToolStripMenuItem.Size = new Size(180, 22);
+            temaToolStripMenuItem.Size = new Size(122, 22);
             temaToolStripMenuItem.Text = "Tema";
             // 
             // festaToolStripMenuItem
             // 
             festaToolStripMenuItem.Name = "festaToolStripMenuItem";
-            festaToolStripMenuItem.Size = new Size(180, 22);
+            festaToolStripMenuItem.Size = new Size(122, 22);
             festaToolStripMenuItem.Text = "Festa";
             // 
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(180, 22);
+            produtosToolStripMenuItem.Size = new Size(122, 22);
             produtosToolStripMenuItem.Text = "Produtos";
             // 
             // toolStrip1
@@ -124,20 +127,38 @@
             toolStripButton3.Size = new Size(42, 42);
             toolStripButton3.Text = "toolStripButton3";
             // 
-            // Form1
+            // labelRodape
+            // 
+            labelRodape.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
+            labelRodape.Location = new Point(0, 428);
+            labelRodape.Name = "labelRodape";
+            labelRodape.Size = new Size(800, 22);
+            labelRodape.TabIndex = 2;
+            labelRodape.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(52, 17);
+            toolStripStatusLabel1.Text = "[rodape]";
+            // 
+            // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelRodape);
             Controls.Add(toolStrip1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "TelaPrincipalForm";
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
+            labelRodape.ResumeLayout(false);
+            labelRodape.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -154,5 +175,7 @@
         private ToolStripButton toolStripButton1;
         private ToolStripButton toolStripButton2;
         private ToolStripButton toolStripButton3;
+        private StatusStrip labelRodape;
+        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
