@@ -1,0 +1,25 @@
+Rafaela possui um negócio de festas infantis. 
+Ela precisa controlar os aluguéis e para isso ela precisa de uma aplicação que permita cadastrar: o nome e o telefone do cliente, 
+o endereço completo da festa, o tema escolhido, a data da festa, a hora de início e término da festa. 
+Além disso, para alguns clientes antigos, Rafaela oferece descontos. Sendo assim, é preciso saber o valor realmente cobrado num determinado aluguel. 
+Para cada tema, é preciso controlar a lista de itens que compõem o tema ²(ex: castelo, boneca da Cinderela, boneco do Mykey, painel e etc), 
+o valor do aluguel é calculado com base nos itens do tema selecionado. Também é necessário controlar o pagamento do aluguel, incluindo a data de quitação do serviço.
+O cliente paga um sinal (geralmente entre 40% e 50%) ao fechar negócio e o restante no dia de realização da festa.
+
+
+*Cadastrar Cliente: Nome, Telefone do cliente, Endereço Completo da Festa, Tema Escolhido, Data da Festa, Hora Inicio e Hora Final.
+	- Cliente Antigo = Desconto, Historico.
+	- Valor Cobrado: Cada item tem um valor *****
+
+*Tema: Lista Itens ², valor do aluguel
+
+*Controle Financeiro: Data Quitação, Valor entrada (40% ou 50%), Valor final na Data da festa.
+
+
+Tela Cadastro Cliente = Nome, Telefone, Cpf.
+Tela Cadastro Temas = NomeItens, ValoresItens, QuantidadesItens
+Tela Cadastro Festa = Cliente, Tema, DataFesta, HoraInicio, HoraFinal, EndereçoDaFesta, ValorEntrada
+Tela Cadastro Financeiro = Cliente, Tema, Festa, ValorRestante   
+
+Financeiro pode ser um filtro da Festa, para dar baixa na Festa quando finalizado, e receber o Valor Final,
+E para salvar no Historico do cliente.
