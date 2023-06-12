@@ -9,11 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ModuloProduto\**" />
+    <EmbeddedResource Remove="ModuloProduto\**" />
+    <None Remove="ModuloProduto\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ModuloCliente\" />
-    <Folder Include="ModuloTema\" />
     <Folder Include="ModuloAgenda\" />
     <Folder Include="ModuloFinanceiro\" />
-    <Folder Include="ModuloProduto\" />
   </ItemGroup>
 
   <ItemGroup>
