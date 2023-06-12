@@ -9,9 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
+
     <Folder Include="ModuloTema\" />
-=======
+
     <Compile Remove="ModuloProduto\**" />
     <EmbeddedResource Remove="ModuloProduto\**" />
     <None Remove="ModuloProduto\**" />
@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <Folder Include="ModuloCliente\" />
->>>>>>> ee1bedced062427ed7f40871c4b1e0e71f4fb7aa
+
     <Folder Include="ModuloAgenda\" />
     <Folder Include="ModuloFinanceiro\" />
   </ItemGroup>
