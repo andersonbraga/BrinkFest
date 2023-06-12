@@ -32,9 +32,9 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            txtld = new TextBox();
+            txtId = new TextBox();
             txtNome = new TextBox();
-            txtEndereço = new TextBox();
+            txtEndereco = new TextBox();
             txtTelefone = new TextBox();
             btnGravar = new Button();
             btnCancelar = new Button();
@@ -76,12 +76,12 @@
             label4.TabIndex = 2;
             label4.Text = "Telefone:";
             // 
-            // txtld
+            // txtId
             // 
-            txtld.Location = new Point(109, 26);
-            txtld.Name = "txtld";
-            txtld.Size = new Size(148, 23);
-            txtld.TabIndex = 3;
+            txtId.Location = new Point(109, 26);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(148, 23);
+            txtId.TabIndex = 3;
             // 
             // txtNome
             // 
@@ -90,12 +90,12 @@
             txtNome.Size = new Size(559, 23);
             txtNome.TabIndex = 4;
             // 
-            // txtEndereço
+            // txtEndereco
             // 
-            txtEndereço.Location = new Point(109, 117);
-            txtEndereço.Name = "txtEndereço";
-            txtEndereço.Size = new Size(208, 23);
-            txtEndereço.TabIndex = 5;
+            txtEndereco.Location = new Point(109, 117);
+            txtEndereco.Name = "txtEndereco";
+            txtEndereco.Size = new Size(208, 23);
+            txtEndereco.TabIndex = 5;
             // 
             // txtTelefone
             // 
@@ -112,6 +112,7 @@
             btnGravar.TabIndex = 7;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 
@@ -130,9 +131,9 @@
             Controls.Add(btnCancelar);
             Controls.Add(btnGravar);
             Controls.Add(txtTelefone);
-            Controls.Add(txtEndereço);
+            Controls.Add(txtEndereco);
             Controls.Add(txtNome);
-            Controls.Add(txtld);
+            Controls.Add(txtId);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -149,9 +150,9 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox txtld;
+        private TextBox txtId;
         private TextBox txtNome;
-        private TextBox txtEndereço;
+        private TextBox txtEndereco;
         private TextBox txtTelefone;
         private Button btnGravar;
         private Button btnCancelar;

@@ -77,17 +77,30 @@ namespace BrinkFest.WinApp.ModuloCliente
 
         public override void Inserir()
         {
-            throw new NotImplementedException();
+            TelaClienteForm telaCliente = new TelaClienteForm();
+            DialogResult opcaoEscolhida = telaCliente.ShowDialog();
+           
+            if (opcaoEscolhida == DialogResult.OK )
+            {
+                Cliente cliente = telaCliente.Cliente;
+                repositorioCliente.Inserir(cliente);
+
+                CarregarClientes();
+            }
         }
 
         public override UserControl ObterListagem()
         {
-            throw new NotImplementedException();
+           if (tabelaCliente == null)
+                tabelaCliente = new TabelaClienteControl();
+
+           CarregarClientes();
+            return tabelaCliente;
         }
 
         public override string ObterTipoCadastro()
         {
-            throw new NotImplementedException();
+            return "Cadastro de Contatos";
         }
     }
 }

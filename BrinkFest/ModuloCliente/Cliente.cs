@@ -12,10 +12,10 @@ namespace BrinkFest.WinApp.ModuloCliente
         public string endereco;
         public string telefone;
 
-        public Cliente(string nome, string endereço, string telefone)
+        public Cliente(string nome, string endereco, string telefone)
         {
             this.nome = nome;
-            this.endereco = endereço;
+            this.endereco = endereco;
             this.telefone = telefone;
         }
 
@@ -23,7 +23,7 @@ namespace BrinkFest.WinApp.ModuloCliente
         {
             this.nome = registroAtualizado.nome;
             this.endereco = registroAtualizado.endereco;
-            this.telefone = registroAtualizado .telefone;
+            this.telefone = registroAtualizado.telefone;
         }
         public override string ToString()
         {
