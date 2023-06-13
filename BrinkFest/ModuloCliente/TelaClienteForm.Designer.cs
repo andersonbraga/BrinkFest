@@ -80,8 +80,10 @@
             // 
             txtId.Location = new Point(109, 26);
             txtId.Name = "txtId";
+            txtId.ReadOnly = true;
             txtId.Size = new Size(148, 23);
             txtId.TabIndex = 3;
+            txtId.Text = "0";
             // 
             // txtNome
             // 
@@ -106,6 +108,7 @@
             // 
             // btnGravar
             // 
+            btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(109, 184);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(96, 60);

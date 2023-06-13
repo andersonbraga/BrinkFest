@@ -11,7 +11,7 @@ namespace BrinkFest.WinApp.Compartilhado
 {
     public class ContextoDados //container
     {
-        private const string NOME_ARQUIVO = "Compartilhado\\BrinkFest.json";
+        private const string NOME_ARQUIVO = "BrinkFest.json";
 
         public List<Cliente> clientes;
 
