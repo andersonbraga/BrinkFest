@@ -23,7 +23,10 @@ namespace BrinkFest.WinApp.ModuloTema
 
         public override void AtualizarInformacoes(Tema registroAtualizado)
         {
-            throw new NotImplementedException();
+            this.titulo = registroAtualizado.titulo;
+            this.item = registroAtualizado.item;
+            this.quantidade = registroAtualizado.quantidade;
+            this.valor = registroAtualizado.valor;
         }
 
         public override string ToString()
@@ -33,7 +36,36 @@ namespace BrinkFest.WinApp.ModuloTema
 
         public override string[] Validar()
         {
-            throw new NotImplementedException();
+            List<string> erros = new List<string>();
+
+            if (string.IsNullOrEmpty(titulo))
+            {
+                erros.Add("O campo ''Tema'' é obrigatório");
+            }
+            if (string.IsNullOrEmpty(item))
+            {
+                erros.Add("O campo ''Item'' é obrigatório");
+            }
+            if (quantidade < 0)
+            {
+                erros.Add("O campo ''Quantidade'' é obrigatório");
+            }
+            if (valor < 0)
+            {
+                erros.Add("O campo ''Valor'' é obrigatório");
+            }
+
+            return erros.ToArray();
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Tema tema &&
+                id == tema.id &&
+                titulo == tema.titulo &&
+                item == tema.item &&
+                quantidade == tema.quantidade &&
+                valor == tema.valor;
         }
     }
 }

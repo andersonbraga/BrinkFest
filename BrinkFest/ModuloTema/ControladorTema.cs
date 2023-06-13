@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrinkFest.WinApp.ModuloCliente;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,7 @@ namespace BrinkFest.WinApp.ModuloTema
             
             if (opcaoEscolhida == DialogResult.OK)
             {
-                Tema tema = telaTema.Tema;
+                Tema tema = telaTema.ObterTema();
 
                 repositorioTema.Inserir(tema);
 
@@ -39,17 +40,24 @@ namespace BrinkFest.WinApp.ModuloTema
         }
         public override void Editar()
         {
+            Tema tema = ObterTemaSelecionado();
+
+            if (tema == null)
+            {
+                MessageBox.Show("Selecione um Tema!", "Edição de Temas", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;
+            }
             TelaTemaForm telaTema = new TelaTemaForm();
+
+            telaTema.ConfigurarTela(tema);
 
             DialogResult opcaoEscolhida = telaTema.ShowDialog();
 
-            telaTema.Tema = tabelaTema.ObterIdSelecionado();
-
             if (opcaoEscolhida == DialogResult.OK)
             {
-                Tema tema = telaTema.Tema;
+                Tema temaAtualizado = telaTema.ObterTema();
 
-                repositorioTema.Editar(tema);
+                repositorioTema.Editar(temaAtualizado);
 
                 MessageBox.Show("Edição completa!");
 
@@ -62,7 +70,13 @@ namespace BrinkFest.WinApp.ModuloTema
         }
         public override void Excluir()
         {
-            Tema tema = tabelaTema.ObterIdSelecionado();
+            Tema tema = ObterTemaSelecionado();
+
+            if (tema == null)
+            {
+                MessageBox.Show("Selecione um Tema!", "Exclusão de Temas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
             DialogResult opcaoEscolhida = MessageBox.Show($"Deseja Excluir o Tema {tema.titulo} ?", "Exclusão de Temas",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -80,17 +94,22 @@ namespace BrinkFest.WinApp.ModuloTema
                 MessageBox.Show("Exclusão Cancelada!");
             }
         }
-        private Tema ObterTarefaSelecionada()
+        public void CarregarTema()
         {
-            
+            List<Tema> temas = repositorioTema.SelecionarTodos();
+            tabelaTema.AtualizarRegistros(temas);
+        }
+        private Tema ObterTemaSelecionado()
+        {
             int id = tabelaTema.ObterIdSelecionado();
-
-            return SelecionarPorId(id);
+            return repositorioTema.SelecionarPorID(id);
         }
         public override UserControl ObterListagem()
         {
             if (tabelaTema == null)
+            {
                 tabelaTema = new TabelaTemaControl();
+            }
 
             CarregarTema();
 
@@ -99,11 +118,6 @@ namespace BrinkFest.WinApp.ModuloTema
         public override string ObterTipoCadastro()
         {
             return "Cadastro de Temas";
-        }
-        public void CarregarTema()
-        {
-            List<Tema> temas = repositorioTema.SelecionarTodos();
-            tabelaTema.AtualizarRegistros(temas);
         }
     }
 }

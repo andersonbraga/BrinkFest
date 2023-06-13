@@ -15,29 +15,38 @@ namespace BrinkFest.WinApp.ModuloTema
         public TelaTemaForm()
         {
             InitializeComponent();
+            this.ConfigurarDialog();
         }
-        private Tema tema;
-
-        private void btnGravar_Click(object sender, EventArgs e)
+        public Tema ObterTema()
         {
-
             string titulo = txtTitulo.Text;
             string item = txtItem.Text;
             int quantidade = Convert.ToInt32(txtQuantidade.Text);
             decimal valor = Convert.ToDecimal(txtValor.Text);
 
-            tema = new Tema(titulo, item, quantidade, valor);
+            Tema tema = new Tema(titulo, item, quantidade, valor);
+
+            return tema;
         }
-
-        public Tema Tema
+        public void ConfigurarTela(Tema tema)
         {
-            get
-            {
-                return tema;
-            }
-            set
-            {
+            txtID.Text = tema.id.ToString();
+            txtTitulo.Text = tema.titulo;
+            txtItem.Text = tema.item;
+            txtQuantidade.Text = tema.quantidade.ToString();
+            txtValor.Text = tema.valor.ToString();
+        }
+        private void btnGravar_Click(object sender, EventArgs e)
+        {
+            Tema tema = ObterTema();
 
+            string[] erros = tema.Validar();
+
+            if (erros.Length > 0)
+            {
+                TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
+
+                DialogResult = DialogResult.None;
             }
         }
     }
