@@ -9,8 +9,13 @@ namespace BrinkFest.WinApp.ModuloTema
 {
     public class ControladorTema : ControladorBase
     {
-        private RepositorioTema repositorioTema;
+        private IRepositorioTema repositorioTema;
         private TabelaTemaControl tabelaTema;
+
+        public ControladorTema(IRepositorioTema repositorioTema)
+        {
+            this.repositorioTema = repositorioTema;
+        }
         public override string ToolTipInserir { get { return "Inserir novo Tema"; } }
 
         public override string ToolTipEditar { get { return "Editar  Tema existente"; } }
@@ -57,7 +62,7 @@ namespace BrinkFest.WinApp.ModuloTema
             {
                 Tema temaAtualizado = telaTema.ObterTema();
 
-                repositorioTema.Editar(temaAtualizado);
+                repositorioTema.Editar(temaAtualizado.id, temaAtualizado);
 
                 MessageBox.Show("Edição completa!");
 
