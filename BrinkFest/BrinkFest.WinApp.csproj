@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ModuloCliente\" />
 
     <Folder Include="ModuloAgenda\" />
     <Folder Include="ModuloFinanceiro\" />

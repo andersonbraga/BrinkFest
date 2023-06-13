@@ -38,11 +38,10 @@ namespace BrinkFest.WinApp.ModuloCliente
             if (opcaoEscolhida == DialogResult.OK) 
             {
                 Cliente clienteAtualizado = telaCliente.ObterCliente();
-                repositorioCliente.Editar(clienteAtualizado.id,clienteAtualizado );
+                repositorioCliente.Editar(clienteAtualizado.id, clienteAtualizado);
 
-                
+                CarregarClientes();
             }
-            CarregarClientes();
 
         }
 
