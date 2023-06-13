@@ -7,24 +7,33 @@ using System.Threading.Tasks;
 
 namespace BrinkFest.WinApp.ModuloTema
 {
-    public class Tema
+    public class Tema : EntidadeBase <Tema>
     {
-        public int id;
         public string titulo;
         public string item;
         public int quantidade;
-        public int valor;
-        public Tema(int id, string titulo, string item, int quantidade, int valor)
+        public decimal valor;
+        public Tema(string titulo, string item, int quantidade, decimal valor)
         {
-            this.id = id;
             this.titulo = titulo;
             this.item = item;
             this.quantidade = quantidade;
             this.valor = valor;
         }
+
+        public override void AtualizarInformacoes(Tema registroAtualizado)
+        {
+            throw new NotImplementedException();
+        }
+
         public override string ToString()
         {
-            return $"id {id}, titulo {titulo}, item {item}, quantidade {quantidade}, valor {valor}";
+            return $"titulo {titulo}, item {item}, quantidade {quantidade}, valor {valor}";
+        }
+
+        public override string[] Validar()
+        {
+            throw new NotImplementedException();
         }
     }
 }

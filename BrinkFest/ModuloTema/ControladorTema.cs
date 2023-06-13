@@ -9,7 +9,7 @@ namespace BrinkFest.WinApp.ModuloTema
     public class ControladorTema : ControladorBase
     {
         private RepositorioTema repositorioTema;
-        private ListagemTemaControl listagemTema;
+        private TabelaTemaControl tabelaTema;
         public override string ToolTipInserir { get { return "Inserir novo Tema"; } }
 
         public override string ToolTipEditar { get { return "Editar  Tema existente"; } }
@@ -18,24 +18,83 @@ namespace BrinkFest.WinApp.ModuloTema
 
         public override void Inserir()
         {
-            throw new NotImplementedException();
+            TelaTemaForm telaTema = new TelaTemaForm();
+
+            DialogResult opcaoEscolhida = telaTema.ShowDialog();
+            
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                Tema tema = telaTema.Tema;
+
+                repositorioTema.Inserir(tema);
+
+                MessageBox.Show("Inserção completa!");
+
+                CarregarTema();
+            }
+            else if (opcaoEscolhida == DialogResult.Cancel)
+            {
+                MessageBox.Show("Inserção Cancelada!");
+            }
         }
         public override void Editar()
         {
-            throw new NotImplementedException();
+            TelaTemaForm telaTema = new TelaTemaForm();
+
+            DialogResult opcaoEscolhida = telaTema.ShowDialog();
+
+            telaTema.Tema = tabelaTema.ObterIdSelecionado();
+
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                Tema tema = telaTema.Tema;
+
+                repositorioTema.Editar(tema);
+
+                MessageBox.Show("Edição completa!");
+
+                CarregarTema();
+            }
+            else if (opcaoEscolhida == DialogResult.Cancel)
+            {
+                MessageBox.Show("Edição Cancelada!");
+            }
         }
         public override void Excluir()
         {
-            throw new NotImplementedException();
+            Tema tema = tabelaTema.ObterIdSelecionado();
+
+            DialogResult opcaoEscolhida = MessageBox.Show($"Deseja Excluir o Tema {tema.titulo} ?", "Exclusão de Temas",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                repositorioTema.Excluir(tema);
+
+                MessageBox.Show("Exclusão completa!");
+
+                CarregarTema();
+            }
+            else if (opcaoEscolhida == DialogResult.Cancel)
+            {
+                MessageBox.Show("Exclusão Cancelada!");
+            }
+        }
+        private Tema ObterTarefaSelecionada()
+        {
+            
+            int id = tabelaTema.ObterIdSelecionado();
+
+            return SelecionarPorId(id);
         }
         public override UserControl ObterListagem()
         {
-            if (listagemTema == null)
-                listagemTema = new ListagemTemaControl();
+            if (tabelaTema == null)
+                tabelaTema = new TabelaTemaControl();
 
             CarregarTema();
 
-            return listagemTema;
+            return tabelaTema;
         }
         public override string ObterTipoCadastro()
         {
@@ -44,7 +103,7 @@ namespace BrinkFest.WinApp.ModuloTema
         public void CarregarTema()
         {
             List<Tema> temas = repositorioTema.SelecionarTodos();
-            listagemTema.AtualizarRegistro(temas);
+            tabelaTema.AtualizarRegistros(temas);
         }
     }
 }

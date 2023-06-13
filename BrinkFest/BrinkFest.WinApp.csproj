@@ -10,8 +10,6 @@
 
   <ItemGroup>
 
-    <Folder Include="ModuloTema\" />
-
     <Compile Remove="ModuloProduto\**" />
     <EmbeddedResource Remove="ModuloProduto\**" />
     <None Remove="ModuloProduto\**" />

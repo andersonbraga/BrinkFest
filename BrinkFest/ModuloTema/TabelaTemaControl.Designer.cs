@@ -1,6 +1,6 @@
 ﻿namespace BrinkFest.WinApp.ModuloTema
 {
-    partial class ListagemTemaControl
+    partial class TabelaTemaControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,30 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listTema = new ListBox();
+            dataTemas = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataTemas).BeginInit();
             SuspendLayout();
             // 
-            // listTema
+            // dataTemas
             // 
-            listTema.Dock = DockStyle.Fill;
-            listTema.FormattingEnabled = true;
-            listTema.ItemHeight = 15;
-            listTema.Location = new Point(0, 0);
-            listTema.Name = "listTema";
-            listTema.Size = new Size(150, 150);
-            listTema.TabIndex = 0;
+            dataTemas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataTemas.Dock = DockStyle.Fill;
+            dataTemas.Location = new Point(0, 0);
+            dataTemas.Name = "dataTemas";
+            dataTemas.RowTemplate.Height = 25;
+            dataTemas.Size = new Size(150, 150);
+            dataTemas.TabIndex = 0;
             // 
-            // ListagemTemaControl
+            // TabelaTemaControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(listTema);
-            Name = "ListagemTemaControl";
+            Controls.Add(dataTemas);
+            Name = "TabelaTemaControl";
+            ((System.ComponentModel.ISupportInitialize)dataTemas).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private ListBox listTema;
+        private DataGridView dataTemas;
     }
 }

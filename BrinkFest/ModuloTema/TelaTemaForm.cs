@@ -17,6 +17,18 @@ namespace BrinkFest.WinApp.ModuloTema
             InitializeComponent();
         }
         private Tema tema;
+
+        private void btnGravar_Click(object sender, EventArgs e)
+        {
+
+            string titulo = txtTitulo.Text;
+            string item = txtItem.Text;
+            int quantidade = Convert.ToInt32(txtQuantidade.Text);
+            decimal valor = Convert.ToDecimal(txtValor.Text);
+
+            tema = new Tema(titulo, item, quantidade, valor);
+        }
+
         public Tema Tema
         {
             get
