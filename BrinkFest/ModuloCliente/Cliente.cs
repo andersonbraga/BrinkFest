@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace BrinkFest.WinApp.ModuloCliente
 {
-   public class Cliente : EntidadeBase<Cliente> 
+    [Serializable]
+    public class Cliente : EntidadeBase<Cliente> 
     {
         public string nome { get; set; }
         public string endereco;
         public string telefone;
 
+        public Cliente()
+        {
+
+        }
         public Cliente(string nome, string endereco, string telefone)
         {
             this.nome = nome;
