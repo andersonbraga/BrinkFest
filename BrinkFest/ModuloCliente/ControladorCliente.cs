@@ -31,13 +31,14 @@ namespace BrinkFest.WinApp.ModuloCliente
                 return;
             }
             TelaClienteForm telaCliente = new TelaClienteForm();
-            telaCliente.Cliente = cliente;
+            telaCliente.ConfigurarTela(cliente);
 
             DialogResult opcaoEscolhida = telaCliente.ShowDialog();
 
             if (opcaoEscolhida == DialogResult.OK) 
             {
-                repositorioCliente.Editar(telaCliente.Cliente.id, telaCliente.Cliente);
+                Cliente clienteAtualizado = telaCliente.ObterCliente();
+                repositorioCliente.Editar(clienteAtualizado.id, clienteAtualizado);
 
                 CarregarClientes();
             }
@@ -82,7 +83,7 @@ namespace BrinkFest.WinApp.ModuloCliente
            
             if (opcaoEscolhida == DialogResult.OK )
             {
-                Cliente cliente = telaCliente.Cliente;
+                Cliente cliente = telaCliente.ObterCliente();
                 repositorioCliente.Inserir(cliente);
 
                 CarregarClientes();
