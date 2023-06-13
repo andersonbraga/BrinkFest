@@ -14,10 +14,10 @@ namespace BrinkFest.WinApp.Compartilhado
 
             DataGridViewCellStyle linhaEscura = new DataGridViewCellStyle
             {
-                BackColor = Color.LightGray,
+                BackColor = Color.AliceBlue,
                 Font = font,
                 ForeColor = Color.Black,
-                SelectionBackColor = Color.LightYellow,
+                SelectionBackColor = Color.LightBlue,
                 SelectionForeColor = Color.Black
             };
 
@@ -27,7 +27,7 @@ namespace BrinkFest.WinApp.Compartilhado
             {
                 BackColor = Color.White,
                 Font = font,
-                SelectionBackColor = Color.LightYellow,
+                SelectionBackColor = Color.LightBlue,
                 SelectionForeColor = Color.Black
             };
 

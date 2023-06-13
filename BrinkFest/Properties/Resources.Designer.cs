@@ -63,6 +63,16 @@ namespace BrinkFest.WinApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1 {
+            get {
+                object obj = ResourceManager.GetObject("1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_circle_FILL1_wght400_GRAD0_opsz24_1_ {
             get {
                 object obj = ResourceManager.GetObject("add_circle_FILL1_wght400_GRAD0_opsz24_1_", resourceCulture);
@@ -99,6 +109,36 @@ namespace BrinkFest.WinApp.Properties {
         internal static System.Drawing.Bitmap edit_FILL1_wght400_GRAD0_opsz24_1_ {
             get {
                 object obj = ResourceManager.GetObject("edit_FILL1_wght400_GRAD0_opsz24_1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngegg {
+            get {
+                object obj = ResourceManager.GetObject("pngegg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com_1_ {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

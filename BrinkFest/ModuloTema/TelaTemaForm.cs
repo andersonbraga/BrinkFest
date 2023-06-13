@@ -19,12 +19,16 @@ namespace BrinkFest.WinApp.ModuloTema
         }
         public Tema ObterTema()
         {
+            int id = Convert.ToInt32(txtID.Text);
             string titulo = txtTitulo.Text;
             string item = txtItem.Text;
             int quantidade = Convert.ToInt32(txtQuantidade.Text);
             decimal valor = Convert.ToDecimal(txtValor.Text);
 
             Tema tema = new Tema(titulo, item, quantidade, valor);
+
+            if (id > 0)
+                tema.id = id;
 
             return tema;
         }

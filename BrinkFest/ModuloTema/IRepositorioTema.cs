@@ -17,6 +17,6 @@ namespace BrinkFest.WinApp.ModuloTema
 
         List<Tema> SelecionarTodos();
 
-        Tema SelecionarPorID(int id);
+        Tema SelecionarPorId(int id);
     }
 }

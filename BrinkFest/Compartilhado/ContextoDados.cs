@@ -6,6 +6,7 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using BrinkFest.WinApp.ModuloCliente;
+using BrinkFest.WinApp.ModuloTema;
 
 namespace BrinkFest.WinApp.Compartilhado
 {
@@ -14,12 +15,14 @@ namespace BrinkFest.WinApp.Compartilhado
         private const string NOME_ARQUIVO = "BrinkFest.json";
 
         public List<Cliente> clientes;
+        public List<Tema> temas;
 
      
 
         public ContextoDados()
         {
             clientes = new List<Cliente>();
+            temas = new List<Tema>();   
       
         }
 
@@ -51,6 +54,7 @@ namespace BrinkFest.WinApp.Compartilhado
                     ContextoDados ctx = JsonSerializer.Deserialize<ContextoDados>(registrosJson, config);
 
                     this.clientes = ctx.clientes;
+                    this.temas = ctx.temas;
                   
                 }
             }

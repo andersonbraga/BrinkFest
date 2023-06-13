@@ -34,8 +34,11 @@
             // 
             // dataTemas
             // 
+            dataTemas.BackgroundColor = SystemColors.GradientActiveCaption;
+            dataTemas.BorderStyle = BorderStyle.Fixed3D;
             dataTemas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataTemas.Dock = DockStyle.Fill;
+            dataTemas.GridColor = SystemColors.InactiveBorder;
             dataTemas.Location = new Point(0, 0);
             dataTemas.Name = "dataTemas";
             dataTemas.RowTemplate.Height = 25;

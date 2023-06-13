@@ -34,7 +34,7 @@ namespace BrinkFest.WinApp.ModuloTema
                 new DataGridViewTextBoxColumn()
                 {
                     Name = "titulo",
-                    HeaderText = "Título"
+                    HeaderText = "Tema"
                 },
                 new DataGridViewTextBoxColumn()
                 {

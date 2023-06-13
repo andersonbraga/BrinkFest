@@ -7,12 +7,18 @@ using System.Threading.Tasks;
 
 namespace BrinkFest.WinApp.ModuloTema
 {
+    [Serializable]
     public class Tema : EntidadeBase <Tema>
     {
         public string titulo;
         public string item;
         public int quantidade;
         public decimal valor;
+
+        public Tema() 
+        {
+            
+        }
         public Tema(string titulo, string item, int quantidade, decimal valor)
         {
             this.titulo = titulo;

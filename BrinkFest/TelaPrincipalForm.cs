@@ -1,5 +1,6 @@
 using BrinkFest.WinApp.Compartilhado;
 using BrinkFest.WinApp.ModuloCliente;
+using BrinkFest.WinApp.ModuloTema;
 
 namespace BrinkFest
 {
@@ -10,7 +11,7 @@ namespace BrinkFest
         private ControladorBase controlador;
         private static TelaPrincipalForm telaPrincipal;
         private IRepositorioCliente repositorioCliente = new RepositorioClienteEmArquivo(contextoDados);
-
+        private IRepositorioTema repositorioTema = new RepositorioTemaEmArquivo(contextoDados);
 
 
         //static ContextoDados contextoDados = new ContextoDados(carregarDados: true);
@@ -27,6 +28,13 @@ namespace BrinkFest
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorCliente(repositorioCliente);
+
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+        private void temaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorTema(repositorioTema);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -53,8 +61,9 @@ namespace BrinkFest
 
             listagem.Dock = DockStyle.Fill;
 
-            panelRegistros.Controls.Clear();
 
+            panelRegistros.Controls.Clear();
+            panelRegistros.Show();
             panelRegistros.Controls.Add(listagem);
         }
         private void ConfigurarToolTips(ControladorBase controlador)
@@ -78,17 +87,56 @@ namespace BrinkFest
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            controlador.Inserir();
+
+            if (controlador != null)
+            {
+                controlador.Inserir();
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma opção do Menu");
+            }
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            controlador.Editar();
+            if (controlador != null)
+            {
+                controlador.Editar();
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma opção do Menu");
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            controlador.Excluir();
+            if (controlador != null)
+            {
+                controlador.Excluir();
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma opção do Menu");
+            }
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorCliente(repositorioCliente);
+            TelaPrincipalForm telaPrincipalForm = new TelaPrincipalForm();
+
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void telaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaPrincipalForm telaPrincipalForm = new TelaPrincipalForm();
+            telaPrincipalForm.ShowDialog();
+
         }
 
         public static TelaPrincipalForm Instancia

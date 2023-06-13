@@ -107,7 +107,7 @@ namespace BrinkFest.WinApp.ModuloTema
         private Tema ObterTemaSelecionado()
         {
             int id = tabelaTema.ObterIdSelecionado();
-            return repositorioTema.SelecionarPorID(id);
+            return repositorioTema.SelecionarPorId(id);
         }
         public override UserControl ObterListagem()
         {

@@ -34,6 +34,7 @@
             // 
             // gridClientes
             // 
+            gridClientes.BackgroundColor = SystemColors.GradientActiveCaption;
             gridClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridClientes.Dock = DockStyle.Fill;
             gridClientes.Location = new Point(0, 0);
