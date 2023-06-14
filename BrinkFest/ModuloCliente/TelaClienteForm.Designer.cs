@@ -78,6 +78,7 @@
             // 
             // txtId
             // 
+            txtId.BackColor = SystemColors.InactiveBorder;
             txtId.Location = new Point(109, 26);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
@@ -87,6 +88,7 @@
             // 
             // txtNome
             // 
+            txtNome.BackColor = SystemColors.InactiveBorder;
             txtNome.Location = new Point(109, 68);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(559, 23);
@@ -94,6 +96,7 @@
             // 
             // txtEndereco
             // 
+            txtEndereco.BackColor = SystemColors.InactiveBorder;
             txtEndereco.Location = new Point(109, 117);
             txtEndereco.Name = "txtEndereco";
             txtEndereco.Size = new Size(208, 23);
@@ -101,6 +104,7 @@
             // 
             // txtTelefone
             // 
+            txtTelefone.BackColor = SystemColors.InactiveBorder;
             txtTelefone.Location = new Point(460, 117);
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(208, 23);
@@ -108,28 +112,31 @@
             // 
             // btnGravar
             // 
+            btnGravar.BackColor = SystemColors.InactiveBorder;
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(109, 184);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(96, 60);
             btnGravar.TabIndex = 7;
             btnGravar.Text = "Gravar";
-            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = SystemColors.InactiveBorder;
             btnCancelar.Location = new Point(572, 184);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(96, 60);
             btnCancelar.TabIndex = 7;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // TelaClienteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(716, 256);
             Controls.Add(btnCancelar);
             Controls.Add(btnGravar);

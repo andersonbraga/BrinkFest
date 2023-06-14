@@ -43,9 +43,9 @@
             labelRodape = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             panelRegistros = new Panel();
-            btnCliente = new Button();
-            button1 = new Button();
             button2 = new Button();
+            button1 = new Button();
+            btnCliente = new Button();
             menuStrip1.SuspendLayout();
             barraFerramentas.SuspendLayout();
             labelRodape.SuspendLayout();
@@ -183,17 +183,16 @@
             panelRegistros.Size = new Size(800, 359);
             panelRegistros.TabIndex = 3;
             // 
-            // btnCliente
+            // button2
             // 
-            btnCliente.BackColor = SystemColors.GradientActiveCaption;
-            btnCliente.BackgroundImageLayout = ImageLayout.None;
-            btnCliente.Image = WinApp.Properties.Resources.pngegg;
-            btnCliente.Location = new Point(61, 24);
-            btnCliente.Name = "btnCliente";
-            btnCliente.Size = new Size(147, 177);
-            btnCliente.TabIndex = 0;
-            btnCliente.UseVisualStyleBackColor = false;
-            btnCliente.Click += btnCliente_Click;
+            button2.BackColor = SystemColors.GradientActiveCaption;
+            button2.BackgroundImageLayout = ImageLayout.None;
+            button2.Image = WinApp.Properties.Resources.pngwing_com_1_;
+            button2.Location = new Point(580, 24);
+            button2.Name = "button2";
+            button2.Size = new Size(147, 177);
+            button2.TabIndex = 2;
+            button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -206,16 +205,17 @@
             button1.TabIndex = 1;
             button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnCliente
             // 
-            button2.BackColor = SystemColors.GradientActiveCaption;
-            button2.BackgroundImageLayout = ImageLayout.None;
-            button2.Image = WinApp.Properties.Resources.pngwing_com_1_;
-            button2.Location = new Point(580, 24);
-            button2.Name = "button2";
-            button2.Size = new Size(147, 177);
-            button2.TabIndex = 2;
-            button2.UseVisualStyleBackColor = false;
+            btnCliente.BackColor = SystemColors.GradientActiveCaption;
+            btnCliente.BackgroundImageLayout = ImageLayout.None;
+            btnCliente.Image = WinApp.Properties.Resources.pngegg;
+            btnCliente.Location = new Point(61, 24);
+            btnCliente.Name = "btnCliente";
+            btnCliente.Size = new Size(147, 177);
+            btnCliente.TabIndex = 0;
+            btnCliente.UseVisualStyleBackColor = false;
+            btnCliente.Click += btnCliente_Click;
             // 
             // TelaPrincipalForm
             // 
