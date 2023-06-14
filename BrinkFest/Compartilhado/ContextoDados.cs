@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using BrinkFest.WinApp.ModuloCliente;
 using BrinkFest.WinApp.ModuloTema;
+using BrinkFest.WinApp.ModuloAluguel;
 
 namespace BrinkFest.WinApp.Compartilhado
 {
@@ -16,6 +17,7 @@ namespace BrinkFest.WinApp.Compartilhado
 
         public List<Cliente> clientes;
         public List<Tema> temas;
+        public List<Aluguel> aluguel;
 
      
 
@@ -23,6 +25,7 @@ namespace BrinkFest.WinApp.Compartilhado
         {
             clientes = new List<Cliente>();
             temas = new List<Tema>();   
+            aluguel = new List<Aluguel>();
       
         }
 
@@ -55,6 +58,7 @@ namespace BrinkFest.WinApp.Compartilhado
 
                     this.clientes = ctx.clientes;
                     this.temas = ctx.temas;
+                    this.aluguel = ctx.aluguel;
                   
                 }
             }
