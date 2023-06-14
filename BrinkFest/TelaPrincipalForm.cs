@@ -1,4 +1,5 @@
 using BrinkFest.WinApp.Compartilhado;
+using BrinkFest.WinApp.ModuloAluguel;
 using BrinkFest.WinApp.ModuloCliente;
 using BrinkFest.WinApp.ModuloTema;
 
@@ -12,7 +13,7 @@ namespace BrinkFest
         private static TelaPrincipalForm telaPrincipal;
         private IRepositorioCliente repositorioCliente = new RepositorioClienteEmArquivo(contextoDados);
         private IRepositorioTema repositorioTema = new RepositorioTemaEmArquivo(contextoDados);
-
+        private IRepositorioAluguel repositorioAluguel = new RepositorioAluguelEmArquivo(contextoDados);
 
         //static ContextoDados contextoDados = new ContextoDados(carregarDados: true);
         public TelaPrincipalForm()
@@ -137,6 +138,28 @@ namespace BrinkFest
             TelaPrincipalForm telaPrincipalForm = new TelaPrincipalForm();
             telaPrincipalForm.ShowDialog();
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorTema(repositorioTema);
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void festaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorAluguel(repositorioCliente, repositorioAluguel, repositorioTema);
+
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorAluguel(repositorioCliente, repositorioAluguel, repositorioTema);
+
+            ConfigurarTelaPrincipal(controlador);
         }
 
         public static TelaPrincipalForm Instancia

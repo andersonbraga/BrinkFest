@@ -72,33 +72,34 @@
             // clienteToolStripMenuItem
             // 
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(142, 22);
+            clienteToolStripMenuItem.Size = new Size(180, 22);
             clienteToolStripMenuItem.Text = "Cliente";
             clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
             // 
             // temaToolStripMenuItem
             // 
             temaToolStripMenuItem.Name = "temaToolStripMenuItem";
-            temaToolStripMenuItem.Size = new Size(142, 22);
+            temaToolStripMenuItem.Size = new Size(180, 22);
             temaToolStripMenuItem.Text = "Tema";
             temaToolStripMenuItem.Click += temaToolStripMenuItem_Click;
             // 
             // festaToolStripMenuItem
             // 
             festaToolStripMenuItem.Name = "festaToolStripMenuItem";
-            festaToolStripMenuItem.Size = new Size(142, 22);
+            festaToolStripMenuItem.Size = new Size(180, 22);
             festaToolStripMenuItem.Text = "Festa";
+            festaToolStripMenuItem.Click += festaToolStripMenuItem_Click;
             // 
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(142, 22);
+            produtosToolStripMenuItem.Size = new Size(180, 22);
             produtosToolStripMenuItem.Text = "Produtos";
             // 
             // telaPrincipalToolStripMenuItem
             // 
             telaPrincipalToolStripMenuItem.Name = "telaPrincipalToolStripMenuItem";
-            telaPrincipalToolStripMenuItem.Size = new Size(142, 22);
+            telaPrincipalToolStripMenuItem.Size = new Size(180, 22);
             telaPrincipalToolStripMenuItem.Text = "tela principal";
             telaPrincipalToolStripMenuItem.Click += telaPrincipalToolStripMenuItem_Click;
             // 
@@ -193,6 +194,7 @@
             button2.Size = new Size(147, 177);
             button2.TabIndex = 2;
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -204,6 +206,7 @@
             button1.Size = new Size(147, 177);
             button1.TabIndex = 1;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // btnCliente
             // 

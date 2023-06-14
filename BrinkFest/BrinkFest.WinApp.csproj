@@ -16,12 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-
-    <Folder Include="ModuloAgenda\" />
-    <Folder Include="ModuloFinanceiro\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
