@@ -13,40 +13,49 @@ namespace BrinkFest.WinApp.ModuloTema2
 {
     public partial class TelaCadastroItemTemaForm : Form
     {
+        private IRepositorioTema2 repositorioTema2;
         public TelaCadastroItemTemaForm(Tema2 temas2)
         {
             InitializeComponent();
 
             this.ConfigurarDialog();
-          
+
             ConfigurarTela(temas2);
 
         }
 
-        //private void CarregarTemas(List<Tema2> temas2)
-        //{
-        //    foreach (Tema2 tema2 in temas2)
-        //    {
-        //        cmbTema.Items.Add(tema2);
-        //    }
-        //}
+        private void CarregarTemas(List<Tema2> temas2)
+        {
+            foreach (Tema2 tema2 in temas2)
+            {
+                cmbTema.Items.Add(tema2);
+            }
+        }
 
         private void ConfigurarTela(Tema2 tema2)
         {
+
+            cmbTema.Text = tema2.items.ToString();
             txtId.Text = tema2.id.ToString();
             txtNovoItem.Text = tema2.tema2;
 
+
             listItens.Items.AddRange(tema2.items.ToArray());
+
 
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             string novoItem = txtNovoItem.Text;
+            decimal novoValor = Convert.ToDecimal(txtValor.Text);
 
-            Item itemTema = new Item(novoItem);
+            Item itemTema = new Item(novoItem, novoValor);
+            
 
             listItens.Items.Add(itemTema);
+   
+
         }
 
         public List<Item> ObterItensCadastrados()

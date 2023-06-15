@@ -29,15 +29,15 @@ namespace BrinkFest.WinApp.ModuloTema2
             id.HeaderText = "ID";
 
             DataGridViewTextBoxColumn tema2 = new DataGridViewTextBoxColumn();
-            tema2.Name = "Tema";
+            tema2.Name = "tema";
             tema2.HeaderText = "Tema";
 
             DataGridViewTextBoxColumn item = new DataGridViewTextBoxColumn();
-            tema2.Name = "item";
-            tema2.HeaderText = "Item";
+            item.Name = "item";
+            item.HeaderText = "Item";
 
             gridTema2.Columns.Add(id);
-            gridTema2.Columns.Add (tema2);
+            gridTema2.Columns.Add(tema2);
             gridTema2.Columns.Add(item);
 
         }

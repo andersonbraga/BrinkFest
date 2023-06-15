@@ -14,7 +14,7 @@ namespace BrinkFest
         private ControladorBase controlador2;
         private static TelaPrincipalForm telaPrincipal;
         private IRepositorioCliente repositorioCliente = new RepositorioClienteEmArquivo(contextoDados);
- 
+
         private IRepositorioAluguel repositorioAluguel = new RepositorioAluguelEmArquivo(contextoDados);
         private IRepositorioTema2 repositorioTema2 = new RepositorioTema2EmArquivo(contextoDados);
 

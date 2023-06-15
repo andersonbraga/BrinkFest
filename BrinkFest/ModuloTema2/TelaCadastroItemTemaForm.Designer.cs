@@ -38,6 +38,9 @@
             btnCancelar = new Button();
             btnGravar = new Button();
             cmbTema = new ComboBox();
+            label4 = new Label();
+            txtValor = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)txtValor).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -97,7 +100,7 @@
             // 
             txtNovoItem.Location = new Point(104, 89);
             txtNovoItem.Name = "txtNovoItem";
-            txtNovoItem.Size = new Size(410, 23);
+            txtNovoItem.Size = new Size(178, 23);
             txtNovoItem.TabIndex = 7;
             // 
             // btnCancelar
@@ -129,11 +132,30 @@
             cmbTema.Size = new Size(137, 23);
             cmbTema.TabIndex = 40;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(324, 92);
+            label4.Name = "label4";
+            label4.Size = new Size(63, 15);
+            label4.TabIndex = 41;
+            label4.Text = "Valor Item:";
+            // 
+            // txtValor
+            // 
+            txtValor.DecimalPlaces = 2;
+            txtValor.Location = new Point(393, 89);
+            txtValor.Name = "txtValor";
+            txtValor.Size = new Size(120, 23);
+            txtValor.TabIndex = 42;
+            // 
             // TelaCadastroItemTemaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(726, 450);
+            Controls.Add(txtValor);
+            Controls.Add(label4);
             Controls.Add(cmbTema);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
@@ -146,6 +168,7 @@
             Controls.Add(label1);
             Name = "TelaCadastroItemTemaForm";
             Text = "TelaCadastroItemTemaForm";
+            ((System.ComponentModel.ISupportInitialize)txtValor).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -162,5 +185,7 @@
         private Button btnCancelar;
         private Button btnGravar;
         private ComboBox cmbTema;
+        private Label label4;
+        private NumericUpDown txtValor;
     }
 }

@@ -10,6 +10,7 @@ namespace BrinkFest.WinApp.ModuloTema2
     public class Item
     {
         public string item;
+        public decimal valor;
         public Tema2 tema;
         public bool concluido;
 
@@ -18,9 +19,10 @@ namespace BrinkFest.WinApp.ModuloTema2
             
         }
 
-        public Item(string item)
+        public Item(string item, decimal valor)
         {
             this.item = item;
+            this.valor = valor;
         }
 
         public Item(string item, Tema2 tema)
@@ -31,12 +33,14 @@ namespace BrinkFest.WinApp.ModuloTema2
 
         public override string ToString()
         {
-            return $"(Item: {item}  Tema: {tema})";
+            return $"(Tema: {tema} Item: {item}   Valor: {valor})" ;
         }
 
         public override bool Equals(object? obj)
         {
-            return obj is Item itens && item == itens.item && tema == itens.tema;
+            return obj is Item itens && 
+                          item == itens.item &&
+                          tema == itens.tema;
                 
         }
         public void Desmarcar()

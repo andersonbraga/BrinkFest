@@ -39,7 +39,7 @@
             gridTema2.Location = new Point(0, 0);
             gridTema2.Name = "gridTema2";
             gridTema2.RowTemplate.Height = 25;
-            gridTema2.Size = new Size(718, 368);
+            gridTema2.Size = new Size(814, 368);
             gridTema2.TabIndex = 0;
             // 
             // TabelaTema2Control
@@ -48,7 +48,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(gridTema2);
             Name = "TabelaTema2Control";
-            Size = new Size(718, 368);
+            Size = new Size(814, 368);
             ((System.ComponentModel.ISupportInitialize)gridTema2).EndInit();
             ResumeLayout(false);
         }

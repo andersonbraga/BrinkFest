@@ -76,35 +76,35 @@
             // clienteToolStripMenuItem
             // 
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(143, 22);
+            clienteToolStripMenuItem.Size = new Size(180, 22);
             clienteToolStripMenuItem.Text = "Cliente";
             clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
             // 
             // temaToolStripMenuItem
             // 
             temaToolStripMenuItem.Name = "temaToolStripMenuItem";
-            temaToolStripMenuItem.Size = new Size(143, 22);
+            temaToolStripMenuItem.Size = new Size(180, 22);
             temaToolStripMenuItem.Text = "Tema";
             temaToolStripMenuItem.Click += temaToolStripMenuItem_Click;
             // 
             // festaToolStripMenuItem
             // 
             festaToolStripMenuItem.Name = "festaToolStripMenuItem";
-            festaToolStripMenuItem.Size = new Size(143, 22);
+            festaToolStripMenuItem.Size = new Size(180, 22);
             festaToolStripMenuItem.Text = "Aluguel";
             festaToolStripMenuItem.Click += festaToolStripMenuItem_Click;
             // 
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(143, 22);
+            produtosToolStripMenuItem.Size = new Size(180, 22);
             produtosToolStripMenuItem.Text = "Produtos";
             // 
             // tema2ToolStripMenuItem
             // 
             tema2ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adicionarItensToolStripMenuItem, adicionarTemasToolStripMenuItem });
             tema2ToolStripMenuItem.Name = "tema2ToolStripMenuItem";
-            tema2ToolStripMenuItem.Size = new Size(143, 22);
+            tema2ToolStripMenuItem.Size = new Size(180, 22);
             tema2ToolStripMenuItem.Text = "Festa";
             tema2ToolStripMenuItem.Click += tema2ToolStripMenuItem_Click;
             // 
@@ -125,7 +125,7 @@
             // telaPrincipalToolStripMenuItem
             // 
             telaPrincipalToolStripMenuItem.Name = "telaPrincipalToolStripMenuItem";
-            telaPrincipalToolStripMenuItem.Size = new Size(143, 22);
+            telaPrincipalToolStripMenuItem.Size = new Size(180, 22);
             telaPrincipalToolStripMenuItem.Text = "Tela Principal";
             telaPrincipalToolStripMenuItem.Click += telaPrincipalToolStripMenuItem_Click;
             // 
@@ -250,6 +250,7 @@
             btnCliente.Name = "btnCliente";
             btnCliente.Size = new Size(147, 177);
             btnCliente.TabIndex = 0;
+            btnCliente.Tag = "";
             btnCliente.UseVisualStyleBackColor = false;
             btnCliente.Click += btnCliente_Click;
             // 
