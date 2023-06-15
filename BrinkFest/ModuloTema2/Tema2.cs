@@ -9,7 +9,7 @@ namespace BrinkFest.WinApp.ModuloTema2
     public class Tema2 : EntidadeBase<Tema2>
     {
         public string tema2;
-        public List<Item> itemRelacionado;
+        public List<Item> items;
 
         public Tema2()
         {
@@ -18,14 +18,14 @@ namespace BrinkFest.WinApp.ModuloTema2
         public Tema2(string tema2)
         {
             this.tema2 = tema2;
-            this.itemRelacionado = new List<Item>();
+            this.items = new List<Item>();
         }
 
         public Tema2(int id, string tema2)
         {
             this.id = id;
             this.tema2 = tema2;
-            this.itemRelacionado = new List<Item>();
+            this.items = new List<Item>();
         }
 
         public override void AtualizarInformacoes(Tema2 registroAtualizado)

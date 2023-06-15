@@ -46,6 +46,7 @@
             button2 = new Button();
             button1 = new Button();
             btnCliente = new Button();
+            tema2ToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             barraFerramentas.SuspendLayout();
             labelRodape.SuspendLayout();
@@ -64,7 +65,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, temaToolStripMenuItem, festaToolStripMenuItem, produtosToolStripMenuItem, telaPrincipalToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, temaToolStripMenuItem, festaToolStripMenuItem, produtosToolStripMenuItem, telaPrincipalToolStripMenuItem, tema2ToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(71, 20);
             cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -220,6 +221,13 @@
             btnCliente.UseVisualStyleBackColor = false;
             btnCliente.Click += btnCliente_Click;
             // 
+            // tema2ToolStripMenuItem
+            // 
+            tema2ToolStripMenuItem.Name = "tema2ToolStripMenuItem";
+            tema2ToolStripMenuItem.Size = new Size(180, 22);
+            tema2ToolStripMenuItem.Text = "Tema2";
+            tema2ToolStripMenuItem.Click += tema2ToolStripMenuItem_Click;
+            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -265,5 +273,6 @@
         private ToolStripMenuItem telaPrincipalToolStripMenuItem;
         private Button button1;
         private Button button2;
+        private ToolStripMenuItem tema2ToolStripMenuItem;
     }
 }

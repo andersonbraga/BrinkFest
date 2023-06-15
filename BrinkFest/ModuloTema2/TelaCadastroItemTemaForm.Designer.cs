@@ -33,11 +33,11 @@
             label3 = new Label();
             listItens = new ListBox();
             btnAdicionar = new Button();
-            txtTema = new TextBox();
             txtId = new TextBox();
             txtNovoItem = new TextBox();
             btnCancelar = new Button();
             btnGravar = new Button();
+            txtTema = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -84,13 +84,7 @@
             btnAdicionar.TabIndex = 5;
             btnAdicionar.Text = "Adicionar";
             btnAdicionar.UseVisualStyleBackColor = true;
-            // 
-            // txtTema
-            // 
-            txtTema.Location = new Point(104, 54);
-            txtTema.Name = "txtTema";
-            txtTema.Size = new Size(592, 23);
-            txtTema.TabIndex = 6;
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
             // txtId
             // 
@@ -117,6 +111,7 @@
             // 
             // btnGravar
             // 
+            btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(28, 369);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(112, 69);
@@ -124,16 +119,24 @@
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
             // 
+            // txtTema
+            // 
+            txtTema.FormattingEnabled = true;
+            txtTema.Location = new Point(104, 51);
+            txtTema.Name = "txtTema";
+            txtTema.Size = new Size(121, 23);
+            txtTema.TabIndex = 10;
+            // 
             // TelaCadastroItemTemaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(726, 450);
+            Controls.Add(txtTema);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Controls.Add(txtNovoItem);
             Controls.Add(txtId);
-            Controls.Add(txtTema);
             Controls.Add(btnAdicionar);
             Controls.Add(listItens);
             Controls.Add(label3);
@@ -152,10 +155,10 @@
         private Label label3;
         private ListBox listItens;
         private Button btnAdicionar;
-        private TextBox txtTema;
         private TextBox txtId;
         private TextBox txtNovoItem;
         private Button btnCancelar;
         private Button btnGravar;
+        private ComboBox txtTema;
     }
 }

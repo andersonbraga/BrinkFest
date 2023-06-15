@@ -162,6 +162,21 @@ namespace BrinkFest
             ConfigurarTelaPrincipal(controlador);
         }
 
+        private void tema2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                controlador.Adicionar();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Erro ao tentar abrir menu do tema");
+            }
+         
+            
+        }
+
         public static TelaPrincipalForm Instancia
         {
             get

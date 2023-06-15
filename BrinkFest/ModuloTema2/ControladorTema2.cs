@@ -10,7 +10,7 @@ namespace BrinkFest.WinApp.ModuloTema2
     public class ControladorTema2 : ControladorBase
     {
         private IRepositorioTema2 iRepositorioTema2;
-        private TabelaTemaControl tabelaTema2;
+        private TabelaTema2Control tabelaTema2;
 
         public override string ToolTipInserir => "Inserir novo Tema";
 
@@ -26,7 +26,7 @@ namespace BrinkFest.WinApp.ModuloTema2
         {
             List<Tema2> tema2 = iRepositorioTema2.SelecionarTodos();
 
-            tabelaTema2.AtualizarRegistros(tema2);
+            tabelaTema2.AtualizarTema2(tema2);
 
             TelaPrincipalForm.Instancia.AtualizarRodape($"Visualizando {tema2.Count}categoria(s)");
 
