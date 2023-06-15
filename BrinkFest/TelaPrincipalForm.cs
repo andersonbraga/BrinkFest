@@ -1,7 +1,8 @@
 using BrinkFest.WinApp.Compartilhado;
 using BrinkFest.WinApp.ModuloAluguel;
 using BrinkFest.WinApp.ModuloCliente;
-using BrinkFest.WinApp.ModuloTema;
+
+using BrinkFest.WinApp.ModuloTema2;
 
 namespace BrinkFest
 {
@@ -10,10 +11,12 @@ namespace BrinkFest
         static ContextoDados contextoDados = new ContextoDados(carregarDados: true);
 
         private ControladorBase controlador;
+        private ControladorBase controlador2;
         private static TelaPrincipalForm telaPrincipal;
         private IRepositorioCliente repositorioCliente = new RepositorioClienteEmArquivo(contextoDados);
-        private IRepositorioTema repositorioTema = new RepositorioTemaEmArquivo(contextoDados);
+ 
         private IRepositorioAluguel repositorioAluguel = new RepositorioAluguelEmArquivo(contextoDados);
+        private IRepositorioTema2 repositorioTema2 = new RepositorioTema2EmArquivo(contextoDados);
 
         //static ContextoDados contextoDados = new ContextoDados(carregarDados: true);
         public TelaPrincipalForm()
@@ -35,7 +38,7 @@ namespace BrinkFest
         }
         private void temaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorTema(repositorioTema);
+            controlador = new ControladorTema2(repositorioTema2);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -135,21 +138,24 @@ namespace BrinkFest
 
         private void telaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             TelaPrincipalForm telaPrincipalForm = new TelaPrincipalForm();
+            telaPrincipal = this;
+            telaPrincipal.Hide();
             telaPrincipalForm.ShowDialog();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorTema(repositorioTema);
+            controlador = new ControladorTema2(repositorioTema2);
 
             ConfigurarTelaPrincipal(controlador);
         }
 
         private void festaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorAluguel(repositorioCliente, repositorioAluguel, repositorioTema);
+            controlador = new ControladorAluguel(repositorioCliente, repositorioAluguel, repositorioTema2);
 
 
             ConfigurarTelaPrincipal(controlador);
@@ -157,24 +163,49 @@ namespace BrinkFest
 
         private void button2_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorAluguel(repositorioCliente, repositorioAluguel, repositorioTema);
+            controlador = new ControladorAluguel(repositorioCliente, repositorioAluguel, repositorioTema2);
 
             ConfigurarTelaPrincipal(controlador);
         }
 
         private void tema2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                controlador.Adicionar();
-            }
-            catch (Exception)
-            {
 
-                MessageBox.Show("Erro ao tentar abrir menu do tema");
-            }
-         
-            
+
+
+        }
+
+        private void btnAdicionarItens_Click(object sender, EventArgs e)
+        {
+
+            if (controlador != controlador2)
+                controlador.Adicionar();
+            else
+                MessageBox.Show("Precisa estar dentro menu Festa");
+        }
+
+        private void adicionarItensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (controlador != controlador2)
+                controlador.Adicionar();
+            else
+                MessageBox.Show("Precisa estar dentro menu tema2");
+        }
+
+        private void adicionarTemasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador2 = new ControladorTema2(repositorioTema2);
+
+            controlador = new ControladorTema2(repositorioTema2);
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void menuPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaPrincipalForm telaPrincipalForm = new TelaPrincipalForm();
+            telaPrincipal = this;
+            telaPrincipal.Hide();
+            telaPrincipalForm.ShowDialog();
         }
 
         public static TelaPrincipalForm Instancia

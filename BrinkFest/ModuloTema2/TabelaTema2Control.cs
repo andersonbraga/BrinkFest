@@ -30,10 +30,15 @@ namespace BrinkFest.WinApp.ModuloTema2
 
             DataGridViewTextBoxColumn tema2 = new DataGridViewTextBoxColumn();
             tema2.Name = "Tema";
-            tema2.HeaderText = "Título";
+            tema2.HeaderText = "Tema";
+
+            DataGridViewTextBoxColumn item = new DataGridViewTextBoxColumn();
+            tema2.Name = "item";
+            tema2.HeaderText = "Item";
 
             gridTema2.Columns.Add(id);
             gridTema2.Columns.Add (tema2);
+            gridTema2.Columns.Add(item);
 
         }
         public void AtualizarTema2(List<Tema2> temas2)
@@ -42,7 +47,7 @@ namespace BrinkFest.WinApp.ModuloTema2
 
             foreach (Tema2 tema2 in temas2)
             {
-                gridTema2.Rows.Add(tema2.id, tema2.tema2);
+                gridTema2.Rows.Add(tema2.id, tema2.tema2, tema2.items);
             }
 
         }

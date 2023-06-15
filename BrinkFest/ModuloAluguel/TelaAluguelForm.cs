@@ -1,5 +1,6 @@
 ﻿using BrinkFest.WinApp.ModuloCliente;
-using BrinkFest.WinApp.ModuloTema;
+
+using BrinkFest.WinApp.ModuloTema2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace BrinkFest.WinApp.ModuloAluguel
 {
     public partial class TelaAluguelForm : Form
     {
-        public TelaAluguelForm(List<Cliente> clientes, List<Tema> temas)
+        public TelaAluguelForm(List<Cliente> clientes, List<Tema2> temas)
         {
             InitializeComponent();
             this.ConfigurarDialog();
@@ -31,9 +32,9 @@ namespace BrinkFest.WinApp.ModuloAluguel
             }
         }
 
-        private void CarregarTemas(List<Tema> temas)
+        private void CarregarTemas(List<Tema2> temas)
         {
-            foreach (Tema tema in temas)
+            foreach (Tema2 tema in temas)
             {
                 cmbTemas.Items.Add(tema);
             }
@@ -53,7 +54,7 @@ namespace BrinkFest.WinApp.ModuloAluguel
             string local = txtEndereco.Text;
 
             Cliente cliente = (Cliente)cmbCliente.SelectedItem;
-            Tema tema = (Tema)cmbTemas.SelectedItem;
+            Tema2 tema = (Tema2)cmbTemas.SelectedItem;
 
             Aluguel aluguel = new Aluguel(id, data, horarioInicio, horarioFinal, cliente, tema, local);
 
@@ -108,6 +109,19 @@ namespace BrinkFest.WinApp.ModuloAluguel
         {
             cmbTemas.Enabled = !cmbTemas.Enabled;
             cmbTemas.SelectedIndex = -1;
+        }
+
+        private void rdbNovo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbNovo.Checked == true)
+                rdbAntigo.Checked = false;
+
+        }
+
+        private void rdbAntigo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbAntigo.Checked == true)
+                rdbNovo.Checked = false;
         }
     }
 }

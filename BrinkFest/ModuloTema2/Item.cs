@@ -11,6 +11,7 @@ namespace BrinkFest.WinApp.ModuloTema2
     {
         public string item;
         public Tema2 tema;
+        public bool concluido;
 
         public Item () 
         {
@@ -37,6 +38,14 @@ namespace BrinkFest.WinApp.ModuloTema2
         {
             return obj is Item itens && item == itens.item && tema == itens.tema;
                 
+        }
+        public void Desmarcar()
+        {
+            concluido = false;
+        }
+        public void Concluir()
+        {
+            concluido = true;
         }
     }
 }

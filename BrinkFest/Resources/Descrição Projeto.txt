@@ -16,7 +16,7 @@ O cliente paga um sinal (geralmente entre 40% e 50%) ao fechar negócio e o resta
 *Controle Financeiro: Data Quitação, Valor entrada (40% ou 50%), Valor final na Data da festa.
 
 
-Tela Cadastro Cliente = Nome, Telefone, Cpf.
+Tela Cadastro Cliente = Nome, Telefone, Cpf.  (Cliente Novo ou Cliente Antigo)
 Tela Cadastro Temas = NomeItens, ValoresItens, QuantidadesItens
 Tela Cadastro Festa = Cliente, Tema, DataFesta, HoraInicio, HoraFinal, EndereçoDaFesta, ValorEntrada
 Tela Cadastro Financeiro = Cliente, Tema, Festa, ValorRestante   

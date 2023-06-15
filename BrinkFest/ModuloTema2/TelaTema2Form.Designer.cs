@@ -30,10 +30,10 @@
         {
             label1 = new Label();
             label2 = new Label();
-            txtId = new TextBox();
             txtTema2 = new TextBox();
             btnGravar = new Button();
             btnCancelar = new Button();
+            txtId = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -54,13 +54,6 @@
             label2.TabIndex = 1;
             label2.Text = "Tema:";
             // 
-            // txtId
-            // 
-            txtId.Location = new Point(83, 26);
-            txtId.Name = "txtId";
-            txtId.Size = new Size(77, 23);
-            txtId.TabIndex = 2;
-            // 
             // txtTema2
             // 
             txtTema2.Location = new Point(269, 26);
@@ -70,6 +63,7 @@
             // 
             // btnGravar
             // 
+            btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(100, 117);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(103, 52);
@@ -79,6 +73,7 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(476, 117);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(103, 52);
@@ -86,15 +81,25 @@
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // txtId
+            // 
+            txtId.Location = new Point(83, 31);
+            txtId.Name = "txtId";
+            txtId.ReadOnly = true;
+            txtId.Size = new Size(120, 23);
+            txtId.TabIndex = 7;
+            txtId.Text = "0";
+            txtId.TextAlign = HorizontalAlignment.Right;
+            // 
             // TelaTema2Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(629, 193);
+            Controls.Add(txtId);
             Controls.Add(btnCancelar);
             Controls.Add(btnGravar);
             Controls.Add(txtTema2);
-            Controls.Add(txtId);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "TelaTema2Form";
@@ -107,9 +112,9 @@
 
         private Label label1;
         private Label label2;
-        private TextBox txtId;
         private TextBox txtTema2;
         private Button btnGravar;
         private Button btnCancelar;
+        private TextBox txtId;
     }
 }

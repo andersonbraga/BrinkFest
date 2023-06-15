@@ -46,6 +46,8 @@
             txtId = new TextBox();
             label1 = new Label();
             cmbCliente = new ComboBox();
+            rdbNovo = new RadioButton();
+            rdbAntigo = new RadioButton();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -222,11 +224,37 @@
             cmbCliente.Size = new Size(137, 23);
             cmbCliente.TabIndex = 39;
             // 
+            // rdbNovo
+            // 
+            rdbNovo.AutoSize = true;
+            rdbNovo.Location = new Point(292, 20);
+            rdbNovo.Name = "rdbNovo";
+            rdbNovo.Size = new Size(94, 19);
+            rdbNovo.TabIndex = 40;
+            rdbNovo.TabStop = true;
+            rdbNovo.Text = "Cliente Novo";
+            rdbNovo.UseVisualStyleBackColor = true;
+            rdbNovo.CheckedChanged += rdbNovo_CheckedChanged;
+            // 
+            // rdbAntigo
+            // 
+            rdbAntigo.AutoSize = true;
+            rdbAntigo.Location = new Point(292, 52);
+            rdbAntigo.Name = "rdbAntigo";
+            rdbAntigo.Size = new Size(101, 19);
+            rdbAntigo.TabIndex = 41;
+            rdbAntigo.TabStop = true;
+            rdbAntigo.Text = "Cliente Antigo";
+            rdbAntigo.UseVisualStyleBackColor = true;
+            rdbAntigo.CheckedChanged += rdbAntigo_CheckedChanged;
+            // 
             // TelaAluguelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(495, 425);
+            Controls.Add(rdbAntigo);
+            Controls.Add(rdbNovo);
             Controls.Add(cmbCliente);
             Controls.Add(chkSelecionarTema);
             Controls.Add(groupBox1);
@@ -271,5 +299,7 @@
         private TextBox txtId;
         private Label label1;
         private ComboBox cmbCliente;
+        private RadioButton rdbNovo;
+        private RadioButton rdbAntigo;
     }
 }

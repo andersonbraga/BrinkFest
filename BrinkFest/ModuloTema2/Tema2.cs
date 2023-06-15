@@ -33,6 +33,11 @@ namespace BrinkFest.WinApp.ModuloTema2
             this.tema2 = registroAtualizado.tema2;
         }
 
+        public void AdicionarItem(Item item)
+        {
+            items.Add(item);
+        }
+
         public override string[] Validar()
         {
             List<string> erros = new List<string>();
@@ -43,5 +48,28 @@ namespace BrinkFest.WinApp.ModuloTema2
             }
             return erros.ToArray();
         }
+
+        public void DesmarcarItem(Item item)
+        {
+            Item itemSelecionado = items.FirstOrDefault(x => x.Equals(item));
+
+            itemSelecionado.Desmarcar();
+
+            //CalcularPercentualConcluido();
+        }
+
+        //private void CalcularPercentualConcluido()
+        //{
+        //    decimal qtdItens = items.Count();
+
+        //    if (qtdItens == 0)
+        //        return;
+
+        //    decimal qtdConcluidos = items.Count(x => x.concluido == true);
+
+        //    decimal resultado = (qtdConcluidos / qtdItens) * 100;
+
+        //    percentualConcluido = Math.Round(resultado, 2);
+        //}
     }
 }

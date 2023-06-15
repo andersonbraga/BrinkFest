@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrinkFest.WinApp.ModuloCliente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,28 +13,30 @@ namespace BrinkFest.WinApp.ModuloTema2
 {
     public partial class TelaCadastroItemTemaForm : Form
     {
-        public TelaCadastroItemTemaForm(Tema2 tema2)
+        public TelaCadastroItemTemaForm(Tema2 temas2)
         {
             InitializeComponent();
 
             this.ConfigurarDialog();
-
-            ConfigurarTela(tema2);
+          
+            ConfigurarTela(temas2);
 
         }
+
+        //private void CarregarTemas(List<Tema2> temas2)
+        //{
+        //    foreach (Tema2 tema2 in temas2)
+        //    {
+        //        cmbTema.Items.Add(tema2);
+        //    }
+        //}
 
         private void ConfigurarTela(Tema2 tema2)
         {
             txtId.Text = tema2.id.ToString();
-            txtNovoItem.Text = tema2.ToString();
+            txtNovoItem.Text = tema2.tema2;
 
             listItens.Items.AddRange(tema2.items.ToArray());
-
-            if (tema2.tema2 != null)
-            {
-                txtTema.SelectedIndex = 0;
-                txtTema.SelectedItem = tema2.tema2;
-            }
 
         }
 

@@ -1,5 +1,6 @@
 ﻿using BrinkFest.WinApp.ModuloCliente;
-using BrinkFest.WinApp.ModuloTema;
+
+using BrinkFest.WinApp.ModuloTema2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,14 @@ namespace BrinkFest.WinApp.ModuloAluguel
     {
         private IRepositorioCliente repositorioCliente;
         private IRepositorioAluguel repositorioAluguel;
-        private IRepositorioTema repositorioTema;
+        private ModuloTema2.IRepositorioTema2 repositorioTema2;
         private TabelaAluguelControl tabelaAluguel;
 
-        public ControladorAluguel(IRepositorioCliente repositorioCliente, IRepositorioAluguel repositorioAluguel, IRepositorioTema repositorioTema)
+        public ControladorAluguel(IRepositorioCliente repositorioCliente, IRepositorioAluguel repositorioAluguel, ModuloTema2.IRepositorioTema2 repositorioTema2)
         {
             this.repositorioCliente = repositorioCliente;
             this.repositorioAluguel = repositorioAluguel;
-            this.repositorioTema = repositorioTema;
+            this.repositorioTema2 = repositorioTema2;
            
         }
 
@@ -36,7 +37,7 @@ namespace BrinkFest.WinApp.ModuloAluguel
         public override void Inserir()
         {
             List<Cliente> clientes = repositorioCliente.SelecionarTodos();
-            List<Tema> temas = repositorioTema.SelecionarTodos();
+            List<Tema2> temas = repositorioTema2.SelecionarTodos();
             TelaAluguelForm telaAluguel = new TelaAluguelForm(clientes, temas);
 
             DialogResult opcaoEscolhida = telaAluguel.ShowDialog();
@@ -66,7 +67,7 @@ namespace BrinkFest.WinApp.ModuloAluguel
             }
 
             List<Cliente> clientes = repositorioCliente.SelecionarTodos();
-            List<Tema> temas = repositorioTema.SelecionarTodos();
+            List<Tema2> temas = repositorioTema2.SelecionarTodos();
             TelaAluguelForm telaAluguel = new TelaAluguelForm(clientes, temas);
 
             telaAluguel.ConfigurarTela(aluguelSelecionado);

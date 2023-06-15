@@ -37,7 +37,7 @@
             txtNovoItem = new TextBox();
             btnCancelar = new Button();
             btnGravar = new Button();
-            txtTema = new ComboBox();
+            cmbTema = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -119,20 +119,22 @@
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
             // 
-            // txtTema
+            // cmbTema
             // 
-            txtTema.FormattingEnabled = true;
-            txtTema.Location = new Point(104, 51);
-            txtTema.Name = "txtTema";
-            txtTema.Size = new Size(121, 23);
-            txtTema.TabIndex = 10;
+            cmbTema.DisplayMember = "nome";
+            cmbTema.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTema.FormattingEnabled = true;
+            cmbTema.Location = new Point(104, 51);
+            cmbTema.Name = "cmbTema";
+            cmbTema.Size = new Size(137, 23);
+            cmbTema.TabIndex = 40;
             // 
             // TelaCadastroItemTemaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(726, 450);
-            Controls.Add(txtTema);
+            Controls.Add(cmbTema);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Controls.Add(txtNovoItem);
@@ -159,6 +161,6 @@
         private TextBox txtNovoItem;
         private Button btnCancelar;
         private Button btnGravar;
-        private ComboBox txtTema;
+        private ComboBox cmbTema;
     }
 }

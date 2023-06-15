@@ -1,5 +1,6 @@
 ﻿using BrinkFest.WinApp.ModuloCliente;
-using BrinkFest.WinApp.ModuloTema;
+
+using BrinkFest.WinApp.ModuloTema2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace BrinkFest.WinApp.ModuloAluguel
 
         public Cliente cliente;
 
-        public Tema tema;
+        public Tema2 tema;
 
         public string local;
 
@@ -34,7 +35,7 @@ namespace BrinkFest.WinApp.ModuloAluguel
         }
 
         public Aluguel(int id, DateTime data, TimeSpan horarioInicio, TimeSpan horarioFinal,
-            Cliente cliente, Tema tema, string local )
+            Cliente cliente, Tema2 tema, string local )
         {
             this.id = id;
         
@@ -48,7 +49,7 @@ namespace BrinkFest.WinApp.ModuloAluguel
         }
 
         public Aluguel(DateTime data, TimeSpan horarioInicio, TimeSpan horarioFinal,
-            Cliente cliente, Tema tema, string local)
+            Cliente cliente, Tema2 tema, string local)
         {
             this.id = id;
        

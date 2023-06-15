@@ -67,7 +67,7 @@ namespace BrinkFest.WinApp.ModuloAluguel
 
             foreach (Aluguel aluguel in aluguels)
             {
-                gridAluguel.Rows.Add(aluguel.id, aluguel.cliente?.nome, aluguel.data, aluguel.horarioInicio, aluguel.tema?.titulo, aluguel.local);
+                gridAluguel.Rows.Add(aluguel.id, aluguel.cliente?.nome, aluguel.data, aluguel.horarioInicio, aluguel.tema.tema2, aluguel.local);
             }
         }
 
