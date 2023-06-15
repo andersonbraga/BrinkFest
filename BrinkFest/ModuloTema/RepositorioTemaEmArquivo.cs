@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace BrinkFest.WinApp.ModuloTema2
 {
-    public class RepositorioTema2EmArquivo : RepositorioEmArquivoBase<Tema2>, IRepositorioTema2
+    public class RepositorioTemaEmArquivo : RepositorioEmArquivoBase<Tema>, IRepositorioTema
     {
-        public RepositorioTema2EmArquivo(ContextoDados contexto) : base(contexto)
+        public RepositorioTemaEmArquivo(ContextoDados contexto) : base(contexto)
         {
 
         }
 
-        protected override List<Tema2> ObterRegistros()
+        protected override List<Tema> ObterRegistros()
         {
             return contextoDados.tema2;
         }

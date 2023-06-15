@@ -13,8 +13,8 @@ namespace BrinkFest.WinApp.ModuloTema2
 {
     public partial class TelaCadastroItemTemaForm : Form
     {
-        private IRepositorioTema2 repositorioTema2;
-        public TelaCadastroItemTemaForm(Tema2 temas2)
+        private IRepositorioTema repositorioTema2;
+        public TelaCadastroItemTemaForm(Tema temas2)
         {
             InitializeComponent();
 
@@ -24,18 +24,18 @@ namespace BrinkFest.WinApp.ModuloTema2
 
         }
 
-        private void CarregarTemas(List<Tema2> temas2)
+        private void CarregarTemas(List<Tema> temas2)
         {
-            foreach (Tema2 tema2 in temas2)
+            foreach (Tema tema2 in temas2)
             {
                 cmbTema.Items.Add(tema2);
             }
         }
 
-        private void ConfigurarTela(Tema2 tema2)
+        private void ConfigurarTela(Tema tema2)
         {
 
-            cmbTema.Text = tema2.items.ToString();
+            cmbTema.Text = tema2.tema2;
             txtId.Text = tema2.id.ToString();
             txtNovoItem.Text = tema2.tema2;
 

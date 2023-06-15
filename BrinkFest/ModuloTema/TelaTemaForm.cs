@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace BrinkFest.WinApp.ModuloTema2
 {
-    public partial class TelaTema2Form : Form
+    public partial class TelaTemaForm : Form
     {
-        public TelaTema2Form()
+        public TelaTemaForm()
         {
             InitializeComponent();
 
             this.ConfigurarDialog();
         }
-        public Tema2 ObterTema2()
+        public Tema ObterTema2()
         {
             int id = Convert.ToInt32(txtId.Text);
 
             string tema2 = txtTema2.Text;
 
-            return new Tema2(id, tema2);
+            return new Tema(id, tema2);
         }
-        public void ConfigurarTela(Tema2 tema2)
+        public void ConfigurarTela(Tema tema2)
         {
             txtId.Text = tema2.id.ToString();
 
@@ -34,7 +34,7 @@ namespace BrinkFest.WinApp.ModuloTema2
         }
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            Tema2 tema2 = ObterTema2();
+            Tema tema2 = ObterTema2();
 
             string[] erros = tema2.Validar();
 

@@ -15,7 +15,7 @@ namespace BrinkFest.WinApp.ModuloAluguel
 {
     public partial class TelaAluguelForm : Form
     {
-        public TelaAluguelForm(List<Cliente> clientes, List<Tema2> temas)
+        public TelaAluguelForm(List<Cliente> clientes, List<Tema> temas)
         {
             InitializeComponent();
             this.ConfigurarDialog();
@@ -32,9 +32,9 @@ namespace BrinkFest.WinApp.ModuloAluguel
             }
         }
 
-        private void CarregarTemas(List<Tema2> temas)
+        private void CarregarTemas(List<Tema> temas)
         {
-            foreach (Tema2 tema in temas)
+            foreach (Tema tema in temas)
             {
                 cmbTemas.Items.Add(tema);
             }
@@ -54,7 +54,7 @@ namespace BrinkFest.WinApp.ModuloAluguel
             string local = txtEndereco.Text;
 
             Cliente cliente = (Cliente)cmbCliente.SelectedItem;
-            Tema2 tema = (Tema2)cmbTemas.SelectedItem;
+            Tema tema = (Tema)cmbTemas.SelectedItem;
 
             Aluguel aluguel = new Aluguel(id, data, horarioInicio, horarioFinal, cliente, tema, local);
 

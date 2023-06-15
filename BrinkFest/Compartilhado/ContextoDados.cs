@@ -19,7 +19,7 @@ namespace BrinkFest.WinApp.Compartilhado
         public List<Cliente> clientes;
 
         public List<Aluguel> aluguel;
-        public List<Tema2> tema2; 
+        public List<Tema> tema2; 
 
      
 
@@ -28,7 +28,7 @@ namespace BrinkFest.WinApp.Compartilhado
             clientes = new List<Cliente>();
   
             aluguel = new List<Aluguel>();
-            tema2 = new List<Tema2>();
+            tema2 = new List<Tema>();
       
         }
 

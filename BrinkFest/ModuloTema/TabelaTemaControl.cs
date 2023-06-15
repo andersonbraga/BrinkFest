@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BrinkFest.WinApp.ModuloTema2
 {
-    public partial class TabelaTema2Control : UserControl
+    public partial class TabelaTemaControl : UserControl
     {
-        public TabelaTema2Control()
+        public TabelaTemaControl()
         {
             InitializeComponent();
 
@@ -41,11 +41,11 @@ namespace BrinkFest.WinApp.ModuloTema2
             gridTema2.Columns.Add(item);
 
         }
-        public void AtualizarTema2(List<Tema2> temas2)
+        public void AtualizarTema2(List<Tema> temas2)
         {
             gridTema2.Rows.Clear();
 
-            foreach (Tema2 tema2 in temas2)
+            foreach (Tema tema2 in temas2)
             {
                 gridTema2.Rows.Add(tema2.id, tema2.tema2, tema2.items);
             }

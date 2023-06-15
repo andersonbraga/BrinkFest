@@ -11,7 +11,7 @@ namespace BrinkFest.WinApp.ModuloTema2
     {
         public string item;
         public decimal valor;
-        public Tema2 tema;
+        public Tema tema;
         public bool concluido;
 
         public Item () 
@@ -25,7 +25,7 @@ namespace BrinkFest.WinApp.ModuloTema2
             this.valor = valor;
         }
 
-        public Item(string item, Tema2 tema)
+        public Item(string item, Tema tema)
         {
             this.item = item;
           

@@ -6,29 +6,29 @@ using System.Threading.Tasks;
 
 namespace BrinkFest.WinApp.ModuloTema2
 {
-    public class Tema2 : EntidadeBase<Tema2>
+    public class Tema : EntidadeBase<Tema>
     {
         public string tema2;
         public List<Item> items;
 
-        public Tema2()
+        public Tema()
         {
         }
 
-        public Tema2(string tema2)
+        public Tema(string tema2)
         {
             this.tema2 = tema2;
             this.items = new List<Item>();
         }
 
-        public Tema2(int id, string tema2)
+        public Tema(int id, string tema2)
         {
             this.id = id;
             this.tema2 = tema2;
             this.items = new List<Item>();
         }
 
-        public override void AtualizarInformacoes(Tema2 registroAtualizado)
+        public override void AtualizarInformacoes(Tema registroAtualizado)
         {
             this.tema2 = registroAtualizado.tema2;
         }

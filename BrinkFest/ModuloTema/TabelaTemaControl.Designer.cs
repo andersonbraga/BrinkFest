@@ -1,6 +1,6 @@
 ﻿namespace BrinkFest.WinApp.ModuloTema2
 {
-    partial class TabelaTema2Control
+    partial class TabelaTemaControl
     {
         /// <summary> 
         /// Required designer variable.

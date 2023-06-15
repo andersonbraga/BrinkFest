@@ -1,6 +1,6 @@
 ﻿namespace BrinkFest.WinApp.ModuloTema2
 {
-    partial class TelaTema2Form
+    partial class TelaTemaForm
     {
         /// <summary>
         /// Required designer variable.

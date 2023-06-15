@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace BrinkFest.WinApp.ModuloTema2
 {
-    public class ControladorTema2 : ControladorBase
+    public class ControladorTema : ControladorBase
     {
-        private IRepositorioTema2 repositorioTema2;
-        private TabelaTema2Control tabelaTema2;
+        private IRepositorioTema repositorioTema2;
+        private TabelaTemaControl tabelaTema2;
 
-        public ControladorTema2(IRepositorioTema2 repositorioTema2)
+        public ControladorTema(IRepositorioTema repositorioTema2)
         {
             this.repositorioTema2 = repositorioTema2;
         }
@@ -40,13 +40,13 @@ namespace BrinkFest.WinApp.ModuloTema2
 
         public override void Inserir()
         {
-            TelaTema2Form telaTema2 = new TelaTema2Form();
+            TelaTemaForm telaTema2 = new TelaTemaForm();
 
             DialogResult opcaoEscolhida = telaTema2.ShowDialog();
 
             if (opcaoEscolhida == DialogResult.OK)
             {
-                Tema2 novaTema = telaTema2.ObterTema2();
+                Tema novaTema = telaTema2.ObterTema2();
 
                 repositorioTema2.Inserir(novaTema);
 
@@ -56,7 +56,7 @@ namespace BrinkFest.WinApp.ModuloTema2
 
         public override void Editar()
         {
-            Tema2 temaSelecionado = ObterTema2Selecionada();
+            Tema temaSelecionado = ObterTema2Selecionada();
 
             if (temaSelecionado == null)
             {
@@ -65,7 +65,7 @@ namespace BrinkFest.WinApp.ModuloTema2
                 return;
             }
 
-            TelaTema2Form telaTema2 = new TelaTema2Form();
+            TelaTemaForm telaTema2 = new TelaTemaForm();
 
             telaTema2.ConfigurarTela(temaSelecionado);
 
@@ -73,7 +73,7 @@ namespace BrinkFest.WinApp.ModuloTema2
 
             if (opcaoEscolhida == DialogResult.OK)
             {
-                Tema2 tema2 = telaTema2.ObterTema2();
+                Tema tema2 = telaTema2.ObterTema2();
 
                 repositorioTema2.Editar(tema2.id, tema2);
 
@@ -83,7 +83,7 @@ namespace BrinkFest.WinApp.ModuloTema2
 
         public override void Excluir()
         {
-            Tema2 temaSelecionado = ObterTema2Selecionada();
+            Tema temaSelecionado = ObterTema2Selecionada();
 
             if (temaSelecionado == null)
             {
@@ -105,7 +105,7 @@ namespace BrinkFest.WinApp.ModuloTema2
 
         public override void Adicionar()
         {
-            Tema2 temaSelecionado = ObterTema2Selecionada();
+            Tema temaSelecionado = ObterTema2Selecionada();
          
  
             if (temaSelecionado == null)
@@ -137,7 +137,7 @@ namespace BrinkFest.WinApp.ModuloTema2
         public override UserControl ObterListagem()
         {
             if (tabelaTema2 == null)
-                tabelaTema2 = new TabelaTema2Control();
+                tabelaTema2 = new TabelaTemaControl();
 
             CarregarTemas2();
 
@@ -149,7 +149,7 @@ namespace BrinkFest.WinApp.ModuloTema2
             return "Cadastro de Temas";
         }
 
-        private Tema2 ObterTema2Selecionada()
+        private Tema ObterTema2Selecionada()
         {
             int id = tabelaTema2.ObterIdSelecionado();
 
@@ -158,7 +158,7 @@ namespace BrinkFest.WinApp.ModuloTema2
 
         private void CarregarTemas2()
         {
-            List<Tema2> tema2 = repositorioTema2.SelecionarTodos();
+            List<Tema> tema2 = repositorioTema2.SelecionarTodos();
             tabelaTema2.AtualizarTema2(tema2);
 
             TelaPrincipalForm.Instancia.AtualizarRodape($"Visualizando {tema2.Count} tema(s)");

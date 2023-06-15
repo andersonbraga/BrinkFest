@@ -16,7 +16,7 @@ namespace BrinkFest
         private IRepositorioCliente repositorioCliente = new RepositorioClienteEmArquivo(contextoDados);
 
         private IRepositorioAluguel repositorioAluguel = new RepositorioAluguelEmArquivo(contextoDados);
-        private IRepositorioTema2 repositorioTema2 = new RepositorioTema2EmArquivo(contextoDados);
+        private IRepositorioTema repositorioTema = new RepositorioTemaEmArquivo(contextoDados);
 
         //static ContextoDados contextoDados = new ContextoDados(carregarDados: true);
         public TelaPrincipalForm()
@@ -38,7 +38,7 @@ namespace BrinkFest
         }
         private void temaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorTema2(repositorioTema2);
+            controlador = new ControladorTema(repositorioTema);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -148,14 +148,14 @@ namespace BrinkFest
 
         private void button1_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorTema2(repositorioTema2);
+            controlador = new ControladorTema(repositorioTema);
 
             ConfigurarTelaPrincipal(controlador);
         }
 
         private void festaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorAluguel(repositorioCliente, repositorioAluguel, repositorioTema2);
+            controlador = new ControladorAluguel(repositorioCliente, repositorioAluguel, repositorioTema);
 
 
             ConfigurarTelaPrincipal(controlador);
@@ -163,7 +163,7 @@ namespace BrinkFest
 
         private void button2_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorAluguel(repositorioCliente, repositorioAluguel, repositorioTema2);
+            controlador = new ControladorAluguel(repositorioCliente, repositorioAluguel, repositorioTema);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -194,9 +194,9 @@ namespace BrinkFest
 
         private void adicionarTemasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            controlador2 = new ControladorTema2(repositorioTema2);
+            controlador2 = new ControladorTema(repositorioTema);
 
-            controlador = new ControladorTema2(repositorioTema2);
+            controlador = new ControladorTema(repositorioTema);
             ConfigurarTelaPrincipal(controlador);
         }
 
