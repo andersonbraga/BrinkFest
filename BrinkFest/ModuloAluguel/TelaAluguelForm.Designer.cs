@@ -252,6 +252,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(495, 425);
             Controls.Add(rdbAntigo);
             Controls.Add(rdbNovo);

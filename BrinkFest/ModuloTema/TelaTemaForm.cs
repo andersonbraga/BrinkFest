@@ -12,31 +12,31 @@ namespace BrinkFest.WinApp.ModuloTema2
 {
     public partial class TelaTemaForm : Form
     {
-        public TelaTemaForm()
+        public TelaTemaForm(List<Tema> temas)
         {
             InitializeComponent();
 
             this.ConfigurarDialog();
         }
-        public Tema ObterTema2()
+        public Tema ObterTema()
         {
             int id = Convert.ToInt32(txtId.Text);
 
-            string tema2 = txtTema2.Text;
+            string tema = txtTema2.Text;
 
-            return new Tema(id, tema2);
+            return new Tema(id, tema);
         }
-        public void ConfigurarTela(Tema tema2)
+        public void ConfigurarTela(Tema tema)
         {
-            txtId.Text = tema2.id.ToString();
+            txtId.Text = tema.id.ToString();
 
-            txtTema2.Text = tema2.tema2;
+            txtTema2.Text = tema.tema;
         }
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            Tema tema2 = ObterTema2();
+            Tema tema = ObterTema();
 
-            string[] erros = tema2.Validar();
+            string[] erros = tema.Validar();
 
             if (erros.Count() > 0)
             {

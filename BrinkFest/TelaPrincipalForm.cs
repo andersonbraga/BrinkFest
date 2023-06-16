@@ -26,7 +26,7 @@ namespace BrinkFest
         }
         public void AtualizarRodape(string mensagem)
         {
-            labelRodape.Text = mensagem;
+            labelRodape3.Text = mensagem;
         }
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)

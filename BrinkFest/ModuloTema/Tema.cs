@@ -8,29 +8,29 @@ namespace BrinkFest.WinApp.ModuloTema2
 {
     public class Tema : EntidadeBase<Tema>
     {
-        public string tema2;
+        public string tema;
         public List<Item> items;
 
         public Tema()
         {
         }
 
-        public Tema(string tema2)
+        public Tema(string tema)
         {
-            this.tema2 = tema2;
+            this.tema = tema;
             this.items = new List<Item>();
         }
 
-        public Tema(int id, string tema2)
+        public Tema(int id, string tema)
         {
             this.id = id;
-            this.tema2 = tema2;
+            this.tema = tema;
             this.items = new List<Item>();
         }
 
         public override void AtualizarInformacoes(Tema registroAtualizado)
         {
-            this.tema2 = registroAtualizado.tema2;
+            this.tema = registroAtualizado.tema;
         }
 
         public void AdicionarItem(Item item)
@@ -41,7 +41,7 @@ namespace BrinkFest.WinApp.ModuloTema2
         public override string[] Validar()
         {
             List<string> erros = new List<string>();
-            if (string.IsNullOrEmpty(tema2))
+            if (string.IsNullOrEmpty(tema))
             {
                 erros.Add("O Campo 'titulo' é obrigatório");
 

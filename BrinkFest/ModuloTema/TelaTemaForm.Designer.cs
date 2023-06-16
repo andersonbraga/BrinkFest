@@ -91,10 +91,11 @@
             txtId.Text = "0";
             txtId.TextAlign = HorizontalAlignment.Right;
             // 
-            // TelaTema2Form
+            // TelaTemaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(629, 193);
             Controls.Add(txtId);
             Controls.Add(btnCancelar);
@@ -102,7 +103,7 @@
             Controls.Add(txtTema2);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "TelaTema2Form";
+            Name = "TelaTemaForm";
             Text = "TeleTema2Form";
             ResumeLayout(false);
             PerformLayout();

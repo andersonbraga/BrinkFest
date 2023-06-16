@@ -44,15 +44,15 @@
             btnEditar = new ToolStripButton();
             btnExcluir = new ToolStripButton();
             labelTipoCadastro = new ToolStripLabel();
-            labelRodape = new StatusStrip();
-            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            statusStrip1 = new StatusStrip();
+            labelRodape3 = new ToolStripStatusLabel();
             panelRegistros = new Panel();
             button2 = new Button();
             button1 = new Button();
             btnCliente = new Button();
             menuStrip1.SuspendLayout();
             barraFerramentas.SuspendLayout();
-            labelRodape.SuspendLayout();
+            statusStrip1.SuspendLayout();
             panelRegistros.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,35 +76,35 @@
             // clienteToolStripMenuItem
             // 
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(180, 22);
+            clienteToolStripMenuItem.Size = new Size(143, 22);
             clienteToolStripMenuItem.Text = "Cliente";
             clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
             // 
             // temaToolStripMenuItem
             // 
             temaToolStripMenuItem.Name = "temaToolStripMenuItem";
-            temaToolStripMenuItem.Size = new Size(180, 22);
+            temaToolStripMenuItem.Size = new Size(143, 22);
             temaToolStripMenuItem.Text = "Tema";
             temaToolStripMenuItem.Click += temaToolStripMenuItem_Click;
             // 
             // festaToolStripMenuItem
             // 
             festaToolStripMenuItem.Name = "festaToolStripMenuItem";
-            festaToolStripMenuItem.Size = new Size(180, 22);
+            festaToolStripMenuItem.Size = new Size(143, 22);
             festaToolStripMenuItem.Text = "Aluguel";
             festaToolStripMenuItem.Click += festaToolStripMenuItem_Click;
             // 
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(180, 22);
+            produtosToolStripMenuItem.Size = new Size(143, 22);
             produtosToolStripMenuItem.Text = "Produtos";
             // 
             // tema2ToolStripMenuItem
             // 
             tema2ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adicionarItensToolStripMenuItem, adicionarTemasToolStripMenuItem });
             tema2ToolStripMenuItem.Name = "tema2ToolStripMenuItem";
-            tema2ToolStripMenuItem.Size = new Size(180, 22);
+            tema2ToolStripMenuItem.Size = new Size(143, 22);
             tema2ToolStripMenuItem.Text = "Festa";
             tema2ToolStripMenuItem.Click += tema2ToolStripMenuItem_Click;
             // 
@@ -125,7 +125,7 @@
             // telaPrincipalToolStripMenuItem
             // 
             telaPrincipalToolStripMenuItem.Name = "telaPrincipalToolStripMenuItem";
-            telaPrincipalToolStripMenuItem.Size = new Size(180, 22);
+            telaPrincipalToolStripMenuItem.Size = new Size(143, 22);
             telaPrincipalToolStripMenuItem.Text = "Tela Principal";
             telaPrincipalToolStripMenuItem.Click += telaPrincipalToolStripMenuItem_Click;
             // 
@@ -187,21 +187,21 @@
             labelTipoCadastro.Size = new Size(75, 42);
             labelTipoCadastro.Text = "tipoCadastro";
             // 
-            // labelRodape
+            // statusStrip1
             // 
-            labelRodape.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            labelRodape.Location = new Point(0, 428);
-            labelRodape.Name = "labelRodape";
-            labelRodape.Size = new Size(800, 22);
-            labelRodape.TabIndex = 2;
-            labelRodape.Text = "statusStrip1";
+            statusStrip1.Items.AddRange(new ToolStripItem[] { labelRodape3 });
+            statusStrip1.Location = new Point(0, 428);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(800, 22);
+            statusStrip1.TabIndex = 2;
+            statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // labelRodape3
             // 
-            toolStripStatusLabel1.BackColor = SystemColors.ControlLightLight;
-            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(52, 17);
-            toolStripStatusLabel1.Text = "[rodape]";
+            labelRodape3.BackColor = SystemColors.ControlLightLight;
+            labelRodape3.Name = "labelRodape3";
+            labelRodape3.Size = new Size(52, 17);
+            labelRodape3.Text = "[rodape]";
             // 
             // panelRegistros
             // 
@@ -262,7 +262,7 @@
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(800, 450);
             Controls.Add(panelRegistros);
-            Controls.Add(labelRodape);
+            Controls.Add(statusStrip1);
             Controls.Add(barraFerramentas);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
@@ -273,8 +273,8 @@
             menuStrip1.PerformLayout();
             barraFerramentas.ResumeLayout(false);
             barraFerramentas.PerformLayout();
-            labelRodape.ResumeLayout(false);
-            labelRodape.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             panelRegistros.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -292,8 +292,8 @@
         private ToolStripButton btnInserir;
         private ToolStripButton btnEditar;
         private ToolStripButton btnExcluir;
-        private StatusStrip labelRodape;
-        private ToolStripStatusLabel toolStripStatusLabel1;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel labelRodape3;
         private ToolStripLabel labelTipoCadastro;
         private Panel panelRegistros;
         private Button btnCliente;

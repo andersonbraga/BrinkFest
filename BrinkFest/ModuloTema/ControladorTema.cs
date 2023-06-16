@@ -9,12 +9,12 @@ namespace BrinkFest.WinApp.ModuloTema2
 {
     public class ControladorTema : ControladorBase
     {
-        private IRepositorioTema repositorioTema2;
+        private IRepositorioTema repositorioTema;
         private TabelaTemaControl tabelaTema2;
 
-        public ControladorTema(IRepositorioTema repositorioTema2)
+        public ControladorTema(IRepositorioTema repositorioTema)
         {
-            this.repositorioTema2 = repositorioTema2;
+            this.repositorioTema = repositorioTema;
         }
 
         #region tooltips
@@ -40,23 +40,26 @@ namespace BrinkFest.WinApp.ModuloTema2
 
         public override void Inserir()
         {
-            TelaTemaForm telaTema2 = new TelaTemaForm();
+            
+            List<Tema> temas = repositorioTema.SelecionarTodos();
+            TelaTemaForm telaTema = new TelaTemaForm(temas);
 
-            DialogResult opcaoEscolhida = telaTema2.ShowDialog();
+
+            DialogResult opcaoEscolhida = telaTema.ShowDialog();
 
             if (opcaoEscolhida == DialogResult.OK)
             {
-                Tema novaTema = telaTema2.ObterTema2();
+                Tema novaTema = telaTema.ObterTema();
 
-                repositorioTema2.Inserir(novaTema);
+                repositorioTema.Inserir(novaTema);
 
             }
-            CarregarTemas2();
+            CarregarTemas();
         }
 
         public override void Editar()
         {
-            Tema temaSelecionado = ObterTema2Selecionada();
+            Tema temaSelecionado = ObterTemaSelecionada();
 
             if (temaSelecionado == null)
             {
@@ -65,25 +68,26 @@ namespace BrinkFest.WinApp.ModuloTema2
                 return;
             }
 
-            TelaTemaForm telaTema2 = new TelaTemaForm();
+            List<Tema> temas = repositorioTema.SelecionarTodos();
+            TelaTemaForm telaTema = new TelaTemaForm(temas);
 
-            telaTema2.ConfigurarTela(temaSelecionado);
+            telaTema.ConfigurarTela(temaSelecionado);
 
-            DialogResult opcaoEscolhida = telaTema2.ShowDialog();
+            DialogResult opcaoEscolhida = telaTema.ShowDialog();
 
             if (opcaoEscolhida == DialogResult.OK)
             {
-                Tema tema2 = telaTema2.ObterTema2();
+                Tema tema = telaTema.ObterTema();
 
-                repositorioTema2.Editar(tema2.id, tema2);
+                repositorioTema.Editar(tema.id, tema);
 
             }
-            CarregarTemas2();
+            CarregarTemas();
         }
 
         public override void Excluir()
         {
-            Tema temaSelecionado = ObterTema2Selecionada();
+            Tema temaSelecionado = ObterTemaSelecionada();
 
             if (temaSelecionado == null)
             {
@@ -92,21 +96,21 @@ namespace BrinkFest.WinApp.ModuloTema2
                 return;
             }
 
-            DialogResult opcaoEscolhida = MessageBox.Show($"Deseja excluir a tema {temaSelecionado.tema2}?",
+            DialogResult opcaoEscolhida = MessageBox.Show($"Deseja excluir a tema {temaSelecionado.tema}?",
                 "Exclusão de Tema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (opcaoEscolhida == DialogResult.OK)
             {
-                repositorioTema2.Excluir(temaSelecionado);
+                repositorioTema.Excluir(temaSelecionado);
 
-                CarregarTemas2();
+                CarregarTemas();
             }
         }
 
         public override void Adicionar()
         {
-            Tema temaSelecionado = ObterTema2Selecionada();
-         
+            Tema temaSelecionado = ObterTemaSelecionada();
+            List<Tema> temas = repositorioTema.SelecionarTodos();
  
             if (temaSelecionado == null)
             {
@@ -115,7 +119,7 @@ namespace BrinkFest.WinApp.ModuloTema2
                 return;
             }
 
-            TelaCadastroItemTemaForm telaCadastroItemTema = new TelaCadastroItemTemaForm(temaSelecionado);
+            TelaCadastroItemTemaForm telaCadastroItemTema = new TelaCadastroItemTemaForm(temas);
 
             DialogResult opcaoEscolhida = telaCadastroItemTema.ShowDialog();
 
@@ -128,8 +132,8 @@ namespace BrinkFest.WinApp.ModuloTema2
                     temaSelecionado.AdicionarItem(item);
                 }
 
-                repositorioTema2.Editar(temaSelecionado.id, temaSelecionado);
-                CarregarTemas2();
+                repositorioTema.Editar(temaSelecionado.id, temaSelecionado);
+                CarregarTemas();
             }
         }
 
@@ -139,7 +143,7 @@ namespace BrinkFest.WinApp.ModuloTema2
             if (tabelaTema2 == null)
                 tabelaTema2 = new TabelaTemaControl();
 
-            CarregarTemas2();
+            CarregarTemas();
 
             return tabelaTema2;
         }
@@ -149,19 +153,19 @@ namespace BrinkFest.WinApp.ModuloTema2
             return "Cadastro de Temas";
         }
 
-        private Tema ObterTema2Selecionada()
+        private Tema ObterTemaSelecionada()
         {
             int id = tabelaTema2.ObterIdSelecionado();
 
-            return repositorioTema2.SelecionarPorId(id);
+            return repositorioTema.SelecionarPorId(id);
         }
 
-        private void CarregarTemas2()
+        private void CarregarTemas()
         {
-            List<Tema> tema2 = repositorioTema2.SelecionarTodos();
-            tabelaTema2.AtualizarTema2(tema2);
+            List<Tema> tema = repositorioTema.SelecionarTodos();
+            tabelaTema2.AtualizarTema(tema);
 
-            TelaPrincipalForm.Instancia.AtualizarRodape($"Visualizando {tema2.Count} tema(s)");
+            TelaPrincipalForm.Instancia.AtualizarRodape($"Visualizando {tema.Count} tema(s)");
         }
 
 

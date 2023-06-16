@@ -15,11 +15,13 @@ namespace BrinkFest.WinApp.ModuloTema2
         public TabelaTemaControl()
         {
             InitializeComponent();
-
-            gridTema2.ConfigurarGridSomenteLeitura();
-            gridTema2.ConfigurarGridZebrado();
-
             ConfigurarColunas();
+
+            gridTema.ConfigurarGridSomenteLeitura();
+
+            gridTema.ConfigurarGridZebrado();
+
+            
         }
 
         private void ConfigurarColunas()
@@ -28,35 +30,35 @@ namespace BrinkFest.WinApp.ModuloTema2
             id.Name = "Id";
             id.HeaderText = "ID";
 
-            DataGridViewTextBoxColumn tema2 = new DataGridViewTextBoxColumn();
-            tema2.Name = "tema";
-            tema2.HeaderText = "Tema";
+            DataGridViewTextBoxColumn tema = new DataGridViewTextBoxColumn();
+            tema.Name = "tema";
+            tema.HeaderText = "Tema";
 
             DataGridViewTextBoxColumn item = new DataGridViewTextBoxColumn();
             item.Name = "item";
             item.HeaderText = "Item";
 
-            gridTema2.Columns.Add(id);
-            gridTema2.Columns.Add(tema2);
-            gridTema2.Columns.Add(item);
+            gridTema.Columns.Add(id);
+            gridTema.Columns.Add(tema);
+            gridTema.Columns.Add(item);
 
         }
-        public void AtualizarTema2(List<Tema> temas2)
+        public void AtualizarTema(List<Tema> temas)
         {
-            gridTema2.Rows.Clear();
+            gridTema.Rows.Clear();
 
-            foreach (Tema tema2 in temas2)
+            foreach (Tema tema in temas)
             {
-                gridTema2.Rows.Add(tema2.id, tema2.tema2, tema2.items);
+                gridTema.Rows.Add(tema.id, tema.tema, tema.items);
             }
 
         }
         public int ObterIdSelecionado()
         {
-            if (gridTema2.SelectedRows.Count == 0)
+            if (gridTema.SelectedRows.Count == 0)
                 return -1;
 
-            int id = Convert.ToInt32(gridTema2.SelectedRows[0].Cells["Id"].Value);
+            int id = Convert.ToInt32(gridTema.SelectedRows[0].Cells["Id"].Value);
 
             return id;
         }

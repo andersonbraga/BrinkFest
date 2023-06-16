@@ -59,7 +59,7 @@ namespace BrinkFest.WinApp.ModuloCliente
 
             foreach (Cliente cliente in clientes)
             {
-                gridClientes.Rows.Add(cliente.id, cliente.nome, cliente.telefone, cliente.endereco);
+                gridClientes.Rows.Add(cliente.id, cliente.nome,  cliente.endereco, cliente.telefone);
             }
         }
 
