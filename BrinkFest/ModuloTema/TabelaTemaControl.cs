@@ -49,7 +49,7 @@ namespace BrinkFest.WinApp.ModuloTema2
 
             foreach (Tema tema in temas)
             {
-                gridTema.Rows.Add(tema.id, tema.tema, tema.items);
+                gridTema.Rows.Add(tema.id, tema.tema, tema.items.ToString());
             }
 
         }
