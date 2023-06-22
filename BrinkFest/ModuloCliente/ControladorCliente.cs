@@ -15,11 +15,11 @@ namespace BrinkFest.WinApp.ModuloCliente
         {
             this.repositorioCliente = repositorioCliente;
         }
-        public override string ToolTipInserir { get { return "Inserir novo Contato"; } }
+        public override string ToolTipInserir { get { return "Inserir novo Cliente"; } }
 
-        public override string ToolTipEditar { get { return "Editar Contato Existente"; } }
+        public override string ToolTipEditar { get { return "Editar Cliente Existente"; } }
 
-        public override string ToolTipExcluir { get { return "Excluir Contato Existente"; } }
+        public override string ToolTipExcluir { get { return "Excluir Cliente Existente"; } }
 
         public override void Editar()
         {
@@ -63,10 +63,10 @@ namespace BrinkFest.WinApp.ModuloCliente
 
             if (cliente == null)
             {
-                MessageBox.Show($"Selecione um contato primeiro!", "Exclusão de Contatos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show($"Selecione um Cliente primeiro!", "Exclusão de Cliente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            DialogResult opcaoEscolhida = MessageBox.Show($"Deseja excluir o contato {cliente.nome}?", "Exclusão de Contatos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult opcaoEscolhida = MessageBox.Show($"Deseja excluir o Cliente {cliente.nome}?", "Exclusão de Cliente", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (opcaoEscolhida == DialogResult.OK)
             {
@@ -101,7 +101,7 @@ namespace BrinkFest.WinApp.ModuloCliente
 
         public override string ObterTipoCadastro()
         {
-            return "Cadastro de Contatos";
+            return "Cadastro de Cliente";
         }
     }
 }
